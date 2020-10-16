@@ -1,0 +1,168 @@
+.md-container {
+    background-color: white;
+}
+
+.md-header-nav__button.md-logo img {
+    display: block;
+    height: 48px;
+    width: 120px;
+}
+
+.md-header-nav__button.md-logo {
+    margin: 0rem;
+    padding: 0rem;
+}
+
+.md-nav__button img {
+    width: 50px;
+    height: 50px;
+}
+
+.md-header-nav__title {
+	padding-left: 0.6rem;
+}
+
+.md-header,
+.md-footer-nav,
+.md-footer-meta {
+    background-color: #4a90e2;
+}
+
+/* Highlight current page in nav menu */
+.md-nav__link--active {
+    color      : #4a90e2;
+    font-weight: bold;
+}
+
+.md-footer-social {
+    font-size: 24px;
+}
+/*
+.md-typeset .codehilite pre {
+	background-color: #EDEFF1;
+}
+
+.md-typeset pre>code {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+}
+*/
+
+/*tighten up table padding*/
+.md-typeset table:not([class]) td {
+    padding: 0.6rem 0.6rem;
+}
+
+.md-typeset table:not([class]) th {
+    padding: 0.6rem 0.6rem;
+    min-width: 50px;
+}
+
+.md-typeset {
+    font-size: 0.7rem;
+    line-height: 1.8;
+}
+/*
+.md-typeset details summary {
+    font-size: 14px;
+}
+.md-typeset .admonition-title{
+    font-size: 14px;
+}
+.md-typeset .admonition p{
+    font-size: 14px;
+}
+.md-typeset .admonition ul{
+    font-size: 14px;
+}
+*/
+@media (min-width: 768px) {
+    .md-typeset code {
+        white-space: pre;
+    }
+}
+
+.no-break {
+    white-space: pre;
+}
+
+
+.codehilite {
+	color: #131121;
+}
+
+.codehilite .c1 {
+	color: #7e7c8e;
+}
+
+.md-typeset h1 {
+	color: #131121;
+}
+
+.md-nav__title {
+	display: none;
+}
+
+
+.h4-no-toc {
+    margin: .8rem 0;
+    font-weight: 700;
+    letter-spacing: -.01em;
+    font-size: .8rem;
+    display: block;
+    margin-block-start: 1.33em;
+    margin-block-end: 1.33em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    line-height: 1.8;
+}
+
+.md-footer-copyright {
+    padding: 0.6rem 0 0 0;
+}
+
+.md-footer-disclaimer {
+    text-align: center;
+    max-width: 100%;
+    float:none;
+    border-top: 1px solid hsla(0,0%,100%,.3);
+    padding: 0.6rem 0;
+}
+
+.md-grid-disclaimer {
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 100%;
+}
+
+.md-footer-social {
+    padding: 0;
+    float:right;
+}
+
+.md-footer-social__link svg {
+    max-height: 1.2rem;
+}
+
+.md-header-nav__button.md-logo svg {
+    width: 120px;
+}
+
+.md-announce {
+    background-color: #000034;
+}
+
+@media only screen and (min-width: 45em) {
+    .md-footer-social {
+        padding: 0;
+    }
+    .md-footer-disclaimer {
+        width: 100%;
+    }
+}
+
+@media (min-width: 1600px) {
+    .md-header-nav__button.md-logo svg {
+        height: 52px;
+    }
+}
