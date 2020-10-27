@@ -25,12 +25,12 @@
 .md-header,
 .md-footer-nav,
 .md-footer-meta {
-    background-color: #4a90e2;
+    background-color: #39b6ff;
 }
 
 /* Highlight current page in nav menu */
 .md-nav__link--active {
-    color      : #4a90e2;
+    color      : #39b6ff;
     font-weight: bold;
 }
 

@@ -2,12 +2,10 @@
 
 The default [node setup](node-setup.md) guide provides instructions for getting a non-voting node setup, but if you're looking to run a [Representative node](overview.md#representative-nodes), and perhaps hoping to become a [Principal Representative](overview.md#principal-representative-nodes), the node will need to be configured to vote and be setup with a Representative account.
 
---8<-- "join-technical-mailing-list.md"
-
 Before getting into the setup instructions, there are a few important considerations:
 
 ## Commitment, security and maintenance
-Running a Nano Representative is a commitment to helping secure the network. This can only be done if the operation of the node is taken seriously.
+Running a KIZUNANO COIN Representative is a commitment to helping secure the network. This can only be done if the operation of the node is taken seriously.
 
 * Prepare for the necessary [maintenance](overview.md#maintenance) on the node and host machine
 * Carefully review the [security guide](security.md) and follow general security best practices at all times
@@ -51,7 +49,7 @@ Add a representative account to a wallet:
 
 Open the account - until you do [account_info](../commands/rpc-protocol.md#account_info) and others will fail:
 
-1. Send some funds to the account, at least 0.01 Nano
+1. Send some funds to the account, at least 0.01 KIZUNANO COIN
 1. Use [search_pending](../commands/rpc-protocol.md#search_pending) to make the wallet open the account automatically
 1. Use [account_info](../commands/rpc-protocol.md#account_info) to verify the state of the account
     - If the account is still not open, use [receive](../commands/rpc-protocol.md#receive) as a backup
@@ -60,7 +58,7 @@ Open the account - until you do [account_info](../commands/rpc-protocol.md#accou
 
 ## Step 3: Restart the node and check voting
 
-Before the node will vote, the representative account configured above must have at least 1000 Nano delegated to it. This is done by changing the representative of other accounts in your wallet with [account_representative_set](../commands/rpc-protocol.md#account_representative_set). If you do not control over 1000 Nano, you will need to have others delegate their weight to your representative.
+Before the node will vote, the representative account configured above must have at least 1000 KIZUNANO COIN delegated to it. This is done by changing the representative of other accounts in your wallet with [account_representative_set](../commands/rpc-protocol.md#account_representative_set). If you do not control over 1000 KIZUNANO COIN, you will need to have others delegate their weight to your representative.
 
 Once you have enough weight, after a few minutes you can search for your representative account on the [mynano.ninja](https://mynano.ninja/) site to verify it is voting.
 
@@ -70,7 +68,7 @@ Once you have enough weight, after a few minutes you can search for your represe
 
 Congratulations on getting your representative setup! If you are able to do a good job maintaining the node and keeping it performing well, you may have a chance at becoming a [Principal Representative](overview.md#principal-representative-nodes). To reach this higher level of participation in consensus, you must get at least 0.1% of [online voting weight](/glossary#online-voting-weight) delegated to your node. After that any votes you send for transactions will be rebroadcast by other nodes to help with consensus even more.
 
-Once you are comfortable with your node setup and want to connect it to the broader Nano ecosystem, there are a few recommended options:
+Once you are comfortable with your node setup and want to connect it to the broader KIZUNANO COIN ecosystem, there are a few recommended options:
 
 ### Setup monitoring
 
@@ -84,6 +82,6 @@ At [MyNano.ninja](https://mynano.ninja) you can also verify your representative 
 
 As you continue maintaining your representative there are great community resources available for support:
 
-* Ask questions in the [Node and Representative Management](https://forum.nano.org/c/node-and-rep/8) category of the Nano Forum
-* Connect on the [Nano Discord server](https://chat.nano.org) for discussion around node maintenance
+* Ask questions in the [Node and Representative Management](https://forum.nano.org/c/node-and-rep/8) category of the KIZUNANO COIN Forum
+* Connect on the [KIZUNANO COIN Discord server](https://chat.kizunanocoin.com) for discussion around node maintenance
 * Join our [Technical Updates Mailing List](http://eepurl.com/gZucL1) to stay updated on releases, network upgrade details and more

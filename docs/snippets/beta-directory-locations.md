@@ -1,5 +1,5 @@
 | **OS**  | **Location** |
 |---------|--------------|
-| Windows | `:::bash C:\Users\<user>\AppData\Local\NanoBeta\` |
-| macOS   | `:::bash /Users/<user>/Library/NanoBeta/ ` |
-| Linux   | `:::bash /home/<user>/NanoBeta/ ` |
+| Windows | `:::bash C:\Users\<user>\AppData\Local\KizunanoBeta\` |
+| macOS   | `:::bash /Users/<user>/Library/KizunanoBeta/ ` |
+| Linux   | `:::bash /home/<user>/KizuanoBeta/ ` |

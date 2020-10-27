@@ -6,7 +6,7 @@
 A few common reasons for joining the beta network include:
 
 * Learning node setup and management
-* Testing out integrations for services built on Nano before running on the main network
+* Testing out integrations for services built on KIZUNANO COIN before running on the main network
 * [Assisting in testing new node releases and features](#node-release-testing)
 * Contributing to a network testing various behaviors and patterns with the protocol
 
@@ -14,9 +14,9 @@ A few common reasons for joining the beta network include:
 
 
 ## Node release testing
-The beta network is also used to coordinate the testing of Nano node releases. The Nano Foundation maintains a few beta nodes on the network and various community members also setup nodes to help provide an environment more similar to the main network. During each development cycle Development Builds (DB) are prepared and shared in the Discord Beta Testing section of channels where early testing is coordinated. Once features are stabilized and included, release builds are published as Release Candidates (RC). Starting with RC1 and incrementing with each published build if needed (RC2, RC3, etc.). Final release of a version typically follows quickly once the RC is observed to be stable.
+The beta network is also used to coordinate the testing of KIZUNANO COIN node releases. The KIZ Association (TKA) maintains a few beta nodes on the network and various community members also setup nodes to help provide an environment more similar to the main network. During each development cycle Development Builds (DB) are prepared and shared in the Discord Beta Testing section of channels where early testing is coordinated. Once features are stabilized and included, release builds are published as Release Candidates (RC). Starting with RC1 and incrementing with each published build if needed (RC2, RC3, etc.). Final release of a version typically follows quickly once the RC is observed to be stable.
 
-We invite anyone interested in contributing to Nano to consider participating on the beta network. Not only is it beneficial to the ecosystem, it is also a great way to learn more about setting up and managing a node.
+We invite anyone interested in contributing to KIZUNANO COIN to consider participating on the beta network. Not only is it beneficial to the ecosystem, it is also a great way to learn more about setting up and managing a node.
 
 !!! warning
 	* Release candidate builds are only recommended for use on the beta network
@@ -40,12 +40,12 @@ ___
 ### Pulling the Docker image
 [![Docker Pulls](https://img.shields.io/docker/pulls/nanocurrency/nano.svg)](https://hub.docker.com/r/nanocurrency/nano-beta)
 
-Pulls the latest release of the Nano Node:
+Pulls the latest release of KIZUNANO COIN Node:
 ```bash
 docker pull nanocurrency/nano-beta
 ```
 
-Pulls a specific version of the Nano node:
+Pulls a specific version of KIZUNANO COIN node:
 ```bash
 docker pull nanocurrency/nano-beta:<tag>
 ```
@@ -55,7 +55,7 @@ Pulls the latest release which includes any release candidate versions:
 docker pull nanocurrency/nano-beta:latest-including-rc
 ```
 
-A list of beta tags can be found at the official [Nano Currency Docker Hub](https://hub.docker.com/r/nanocurrency/nano-beta/tags)
+A list of beta tags can be found at the official [KIZUNANO COIN Currency Docker Hub](https://hub.docker.com/r/kizunanocoin/nano-beta/tags)
 
 ### Starting the Docker container
 
@@ -97,15 +97,15 @@ docker run --restart=unless-stopped -d \
 <span id="latest-beta-builds"></span>
 ## Testing Builds
 
-Most of the resources needed to participate on the beta network can be found within the `#beta-xxxxxxx` channels on our [Discord server](https://chat.nano.org). As much of the discussion, planning and engagement happens here, all participants are highly encouraged to join there.
+Most of the resources needed to participate on the beta network can be found within the `#beta-xxxxxxx` channels on our [Discord server](https://chat.kizunanocoin.com). As much of the discussion, planning and engagement happens here, all participants are highly encouraged to join there.
 
 ### Binaries
 
-In addition to the Docker details above, the latest binary builds of the node for the beta network are shared in the `#beta-announcements` channel on our [Discord server](https://chat.nano.org). These assets are also available on the [GitHub repository Releases page](https://github.com/nanocurrency/nano-node/releases) under `RC#` and `DB#` tags, which can also be used to manually build if necessary.
+In addition to the Docker details above, the latest binary builds of the node for the beta network are shared in the `#beta-announcements` channel on our [Discord server](https://chat.kizunanocoin.com). These assets are also available on the [GitHub repository Releases page](https://github.com/kizunanocoin/node/releases) under `RC#` and `DB#` tags, which can also be used to manually build if necessary.
 
 ### Beta fund distribution
 
-The funds used for testing transactions on the beta network are generated from a new genesis block and distributed in bulk to various testers running nodes on the network. For small amounts suitable for most basic integration, you can get beta Nano from the `#beta-faucet` channel on Discord. If you plan to consistently run a node on beta and want to participate in consensus as a Representative, please connect with `Zach - ATX#0646` or `Dotcom#9351` in the `#beta-net` channel on our [Discord server](https://chat.nano.org).
+The funds used for testing transactions on the beta network are generated from a new genesis block and distributed in bulk to various testers running nodes on the network. For small amounts suitable for most basic integration, you can get beta KIZUNANO COIN from the `#beta-faucet` channel on Discord. If you plan to consistently run a node on beta and want to participate in consensus as a Representative, please connect with `Zach - ATX#0646` or `Dotcom#9351` in the `#beta-net` channel on our [Discord server](https://chat.kizunanocoin.com).
 
 ### Beta ledger file
 
@@ -118,4 +118,4 @@ curl -O https://s3.us-east-2.amazonaws.com/beta-snapshot.nano.org/data.tar.gz; t
 ```
 
 ### Ongoing Test Cases
-A spreadsheet of some test cases is maintained separately and available for sharing with community members who are involved on the beta network.  If you are interested in helping with these test cases, please connect with `Zach - ATX#0646` or `Dotcom#9351` in the `#beta-net` channel on our [Discord server](https://chat.nano.org).
+A spreadsheet of some test cases is maintained separately and available for sharing with community members who are involved on the beta network.  If you are interested in helping with these test cases, please connect with `Zach - ATX#0646` or `Dotcom#9351` in the `#beta-net` channel on our [Discord server](https://chat.kizunanocoin.com).

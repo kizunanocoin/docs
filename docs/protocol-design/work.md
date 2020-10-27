@@ -1,4 +1,4 @@
-Title: Nano Protocol Design - Work
+Title: KIZUNANO COIN Protocol Design - Work
 
 # Protocol Design - Work
 
@@ -28,5 +28,5 @@ Existing content related to this page:
 
 * [Basics - PoW](/integration-guides/the-basics/#proof-of-work)
 * [Dynamic PoW & Prioritization](https://medium.com/nanocurrency/dynamic-proof-of-work-prioritization-4618b78c5be9)
-* [Nano How 4: Proof of Work](https://medium.com/nano-education/nano-how-4-proof-of-work-474bf20fc7d)
+* [KIZUNANO COIN How 4: Proof of Work](https://medium.com/nano-education/nano-how-4-proof-of-work-474bf20fc7d)
 * [Work Generation guide](../integration-guides/work-generation.md)

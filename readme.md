@@ -1,21 +1,21 @@
-# Nano Protocol Documentation
+# KIZUNANO COIN Protocol Documentation
 
-`nano-docs` is the source code for the Nano protocol documentation and is built using [MkDocs](https://www.mkdocs.org/) with the [MkDocs Material theme](https://squidfunk.github.io/mkdocs-material/).
+`docs` is the source code for KIZUNANO COIN protocol documentation and is built using [MkDocs](https://www.mkdocs.org/) with the [MkDocs Material theme](https://squidfunk.github.io/mkdocs-material/).
 
 ### Purpose
-This documentation focuses on various users within the technical community: advanced users, node operators, developers integrating Nano, and those interested in details around how the protocol works. All efforts to help update the documentation should keep in mind these goals as submissions that fall outside of this scope are likely to be rejected.
+This documentation focuses on various users within the technical community: advanced users, node operators, developers integrating KIZUNANO COIN, and those interested in details around how the protocol works. All efforts to help update the documentation should keep in mind these goals as submissions that fall outside of this scope are likely to be rejected.
 
 ### Contributing
-For users wishing to contribute to this documentation, we recommend you join the Discord (https://chat.nano.org) #documentation channel to keep up to date on the latest activity. GitHub issues will be used to manage requests for changes. It is recommended any navigational changes or larger updates be discussed on the Discord #nano-docs channel or within a GitHub issue before completing work - this will help avoid wasted work that does not align with the documentation goals.
+For users wishing to contribute to this documentation, we recommend you join the Discord (https://chat.kizunanocoin.com) #documentation channel to keep up to date on the latest activity. GitHub issues will be used to manage requests for changes. It is recommended any navigational changes or larger updates be discussed on the Discord #docs channel or within a GitHub issue before completing work - this will help avoid wasted work that does not align with the documentation goals.
 
 To submit changes, please fork the repository and create a branch to make changes. Submit a Pull Request back to the source repository when ready for review ahead of possible inclusion.
 
 ## Development
-The recommended local setup is to use Docker with a pre-built image for MkDocs and Material theme. With Docker installed, from the cloned nano-docs directory run:
+The recommended local setup is to use Docker with a pre-built image for MkDocs and Material theme. With Docker installed, from the cloned docs directory run:
 
 ```bash
-docker pull nanocurrency/nano-docs:base
-docker run --rm -it -p 8000:8000 -v ${PWD}:/docs nanocurrency/nano-docs:base
+docker pull kizunanocoin/docs:base
+docker run --rm -it -p 8000:8000 -v ${PWD}:/docs kizunanocoin/docs:base
 ```
 
 You can also install MkDocs with Python 3 to serve using the following:

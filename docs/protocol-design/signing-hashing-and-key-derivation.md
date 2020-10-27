@@ -4,7 +4,7 @@
 
 ### Signing algorithm: ED25519
 
-ED25519 is an elliptic curve algorithm developed in an academic setting with a focus on security from side channel attack, performance, and fixing a lot of the little annoyances in most elliptic curve systems[^1]. However, it should be noted that instead of using SHA-512 in the key derivation function, Nano uses Blake2b-512.
+ED25519 is an elliptic curve algorithm developed in an academic setting with a focus on security from side channel attack, performance, and fixing a lot of the little annoyances in most elliptic curve systems[^1]. However, it should be noted that instead of using SHA-512 in the key derivation function, KIZUNANO COIN uses Blake2b-512.
 
 !!! failure "Incorrect, SHA-512 has been used"
   ```
@@ -20,7 +20,7 @@ ED25519 is an elliptic curve algorithm developed in an academic setting with a f
 
 ### Hashing algorithm: Blake2
 
-Compared to existing cryptocurrencies, the hash algorithm chosen is much less important since it's not being used in a [Proof-of-Work](/glossary#proof-of-work-pow) context.  In Nano hashing is used purely as a digest algorithm against block contents.  Blake2b-256 is a highly optimized cryptographic hash function whose predecessor was a SHA3 finalist.[^2]
+Compared to existing cryptocurrencies, the hash algorithm chosen is much less important since it's not being used in a [Proof-of-Work](/glossary#proof-of-work-pow) context.  In KIZUNANO COIN hashing is used purely as a digest algorithm against block contents.  Blake2b-256 is a highly optimized cryptographic hash function whose predecessor was a SHA3 finalist.[^2]
 
 ### Key derivation function: Argon2
 

@@ -1,4 +1,4 @@
-Title: Nano Node Implementation - Voting
+Title: KIZUNANO COIN Node Implementation - Voting
 
 # Node Implementation - Voting
 

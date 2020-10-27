@@ -4,9 +4,7 @@
 
 ## Official release builds
  
-Each release cycle official builds of the node for Linux, MacOS and Windows are generated and linked to from the related [GitHub Release](https://github.com/nanocurrency/nano-node/releases):
-
---8<-- "current-release-build-links.md"
+Each release cycle official builds of the node for Linux, MacOS and Windows are generated and linked to from the related [GitHub Release](https://github.com/kizunanocoin/node/releases):
 
 --8<-- "known-issue-peers-stake-reporting.md"
 
@@ -23,9 +21,9 @@ sudo yum-config-manager --add-repo https://repo.nano.org/nanocurrency-beta.repo
 sudo yum install nanocurrency-beta
 ```
 
-This installs `nano_node-beta` to bin.
+This installs `kizunano_node-beta` to bin.
 
-## Nano Directory
+## KIZUNANO COIN Directory
 
 ### Contents
 
@@ -36,11 +34,11 @@ This installs `nano_node-beta` to bin.
 --8<-- "directory-locations.md"
 
 ??? tip "Moving directory locations"
-    Some users desire to change the blockchain download location. A solution is available for the no gui nano_node (see https://github.com/nanocurrency/nano-node/issues/79), but no concrete solution is available for the GUI client. However, a workaround can be acheived via the use of symbolic links. Below is a short tutorial for Windows builds:
+    Some users desire to change the blockchain download location. A solution is available for the no gui kizunano_node (see https://github.com/nanocurrency/nano-node/issues/79), but no concrete solution is available for the GUI client. However, a workaround can be acheived via the use of symbolic links. Below is a short tutorial for Windows builds:
 
-    1. Rename/delete the Nano directory in your `appdata` Local directory (if you haven't run the wallet yet, skip this step). This is necessary because the command to create a symbolic link in windows will fail if the the input directory already exists.
-    1. Decide on where you want to store the blockchain and create a symbolic link. The command is (in an administrative command-prompt): `mklink /d "C:\Users\<user>\AppData\Local\Nano\" "E:\Some\Other\Directory"`. This command creates a symbolic link for a directory (`/d`) that 'redirects' all requests for files/directories in the `Local\Nano` directory to the `Other\Directory`. This means that a file created in the input directory will actually be in the output directory (on the other disk).
-    1. Verify it works. Create a file in your Nano directory in your appdata, and you should see it appear in the directory you linked it to (and vice-versa). If you have old wallets or a partially-downloaded blockchain, copy them back into the local directory. Start the wallet.
+    1. Rename/delete KIZUNANO COIN directory in your `appdata` Local directory (if you haven't run the wallet yet, skip this step). This is necessary because the command to create a symbolic link in windows will fail if the the input directory already exists.
+    1. Decide on where you want to store the blockchain and create a symbolic link. The command is (in an administrative command-prompt): `mklink /d "C:\Users\<user>\AppData\Local\Kizunanocoin\" "E:\Some\Other\Directory"`. This command creates a symbolic link for a directory (`/d`) that 'redirects' all requests for files/directories in the `Local\Kizunanocoin` directory to the `Other\Directory`. This means that a file created in the input directory will actually be in the output directory (on the other disk).
+    1. Verify it works. Create a file in your KIZUNANO COIN directory in your appdata, and you should see it appear in the directory you linked it to (and vice-versa). If you have old wallets or a partially-downloaded blockchain, copy them back into the local directory. Start the wallet.
 
 ---
 
@@ -51,9 +49,9 @@ This installs `nano_node-beta` to bin.
 !!! success "Requirements"
     **Required Source**
 
-    * [Boost 1.69+](http://www.boost.org/users/history/version_1_69_0.html) extracted to [boost.src] (OR `sh nano-node/util/build_prep/bootstrap_boost.sh -m`)
+    * [Boost 1.69+](http://www.boost.org/users/history/version_1_69_0.html) extracted to [boost.src] (OR `sh node/util/build_prep/bootstrap_boost.sh -m`)
     * (wallet) [Qt 5.x open source edition](https://www1.qt.io/download-open-source/) extracted to [qt.src]
-    * Nano node source in [nano-node.src]
+    * KIZUNANO COIN node source in [node.src]
 
     **Required build tools**
 
@@ -67,7 +65,7 @@ This installs `nano_node-beta` to bin.
 
 **Option 1**
 
-Inside `nano-node` directory run:
+Inside `node` directory run:
 
 ```bash
 sh util/build_prep/bootstrap_boost.sh -m
@@ -112,16 +110,16 @@ Format: `cmake -D VARNAME=VARVALUE`
 * `NANO_WARN_TO_ERR=ON` (*v20.0+* turn compiler warnings into errors on Linux/Mac) 
 * `NANO_TIMED_LOCKS=50` (*v20.0+* when the number of milliseconds a mutex is held is equal or greater than this output a stacktrace, 0 disables.)
 * `NANO_STACKTRACE_BACKTRACE=ON` (*v20.0+* use a different configuration of Boost backtrace in stacktraces, attempting to display filenames, function names and line numbers. Needs `libbacktrace` to be installed. Some [workarounds](https://www.boost.org/doc/libs/develop/doc/html/stacktrace/configuration_and_build.html#stacktrace.configuration_and_build.f3) may be necessary depending on system and configuration. Use CLI [`--debug_stacktrace`](/commands/command-line-interface#-debug_stacktrace) to get an example output.)
-* `CI_BUILD=TRUE` (*v20.0+* if enabled, uses environment variable `TRAVIS_TAG` (required) to modify the locally reported node version; example `TRAVIS_TAG="My Nano Node v20"`)
+* `CI_BUILD=TRUE` (*v20.0+* if enabled, uses environment variable `TRAVIS_TAG` (required) to modify the locally reported node version; example `TRAVIS_TAG="My KIZUNANO COIN Node v20"`)
 * `NANO_ROCKSDB=ON` (*v20.0+* NOTE: RocksDB support is still in experimental stages and should not be used in production systems. To build the node with RocksDB [click here](/running-a-node/rocksdb-ledger-backend/#rocksdb-ledger-backend) for more details)
 
 **Build Node**
 
 * `git submodule update --init --recursive`
 * Generate with cmake then build with your compiler
-* (\*nix) to build node without GUI execute: `make nano_node`
-* (\*nix) to build wallet with GUI execute: `make nano_wallet`
-* (\*nix) to build rpc for child/out of process execute: `make nano_rpc`
+* (\*nix) to build node without GUI execute: `make kizunano_node`
+* (\*nix) to build wallet with GUI execute: `make kizunano_wallet`
+* (\*nix) to build rpc for child/out of process execute: `make kizunano_rpc`
 
 **Building a package**
 
@@ -213,13 +211,13 @@ Follow the [build instructions](#build-instructions-debian-centos-arch-linux).
 ### Node
 
 ```bash
-git clone --branch V21.1 --recursive https://github.com/nanocurrency/nano-node.git nano_build
+git clone --recursive https://github.com/kizunanocoin/node.git nano_build
 cd nano_build
 export BOOST_ROOT=`pwd`/../boost_build
 sh util/build_prep/bootstrap_boost.sh -m
 cmake -G "Unix Makefiles" .
-make nano_node
-cp nano_node ../nano_node && cd .. && ./nano_node --diagnostics
+make kizunano_node
+cp kizunano_node ../kizunano_node && cd .. && ./kizunano_node --diagnostics
 ```
 
 ---
@@ -229,13 +227,13 @@ cp nano_node ../nano_node && cd .. && ./nano_node --diagnostics
 --8<-- "unsupported-configuration.md"
 
 ```bash
-git clone --branch V21.1 --recursive https://github.com/nanocurrency/nano-node.git nano_build
+git clone --branch V21.1 --recursive https://github.com/kizunanocoin/node.git nano_build
 cd nano_build
 export BOOST_ROOT=`pwd`/../boost_build
 sh util/build_prep/bootstrap_boost.sh -m
 cmake -G "Unix Makefiles" .
-make nano_node
-cp nano_node ../nano_node && cd .. && ./nano_node --diagnostics
+make kizunano_node
+cp kizunano_node ../kizunano_node && cd .. && ./kizunano_node --diagnostics
 ```
 
 ## Build Instructions - Windows
@@ -258,11 +256,11 @@ cp nano_node ../nano_node && cd .. && ./nano_node --diagnostics
 
 Using git_bash:
 ```bash
-git clone --branch V21.1 --recursive https://github.com/nanocurrency/nano-node
-cd nano-node
+git clone --branch V21.1 --recursive https://github.com/kizunanocoin/node
+cd node
 ```
 
-**Create a `build` directory inside nano-node (makes for easier cleaning of build)**
+**Create a `build` directory inside node (makes for easier cleaning of build)**
 
 Using git_bash:
 ```bash
@@ -292,7 +290,7 @@ cmake -DNANO_GUI=ON -DCMAKE_BUILD_TYPE=%CONFIGURATION% -DACTIVE_NETWORK=%NETWORK
 
 ### Build
 	
-* Open `nano-node.sln` in Visual Studio
+* Open `node.sln` in Visual Studio
 * Build the configuration specified in the previous step
 * Alternative using 64 Native Tools Command Prompt:
 

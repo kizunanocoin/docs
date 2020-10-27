@@ -1,4 +1,4 @@
-Title: Nano Protocol Design - Blocks
+Title: KIZUNANO COIN Protocol Design - Blocks
 
 # Protocol Design - Blocks
 
@@ -35,13 +35,12 @@ Title: Nano Protocol Design - Blocks
 
 Existing whitepaper sections related to this page:
 
-* [Nano Components](/whitepaper/english/#raiblocks-components)
+* [KIZUNANO COIN Components](/whitepaper/english/#raiblocks-components)
 * [System Overview](/whitepaper/english/#system-overview)
 
 Existing content:
 
 * [Blocks specifications](/the-basics/#blocks-specifications)
 * [Creating transactions](/key-management/#creating-transactions)
-* [Nano 101: Epoch Blocks](https://medium.com/nanocurrency/an-epoch-blocks-explainer-aa22905b28db)
-* [Nano How 2: Blocks and Lattices](https://medium.com/nano-education/nano-how-2-blocks-and-lattices-c0ccd417bd5a)
-* [Network Upgrades details on epoch blocks](../releases/network-upgrades.md#epoch-blocks)
+* [KIZUNANO COIN 101: Epoch Blocks](https://medium.com/nanocurrency/an-epoch-blocks-explainer-aa22905b28db)
+* [KIZUNANO COIN How 2: Blocks and Lattices](https://medium.com/nano-education/nano-how-2-blocks-and-lattices-c0ccd417bd5a)

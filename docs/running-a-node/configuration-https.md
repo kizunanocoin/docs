@@ -43,7 +43,7 @@ We also need to generate a Diffie-Hellman params file:
 
 ## Test call
 
-Create a POST request to `https://www.example.com:7076` with the following body:
+Create a POST request to `https://www.example.com:3976` with the following body:
 ```json
 {
     "action": "block_count"

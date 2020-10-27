@@ -1,4 +1,4 @@
-Title: Nano Node Implementation - Work
+Title: KIZUNANO COIN Node Implementation - Work
 
 # Node Implementation - Work
 

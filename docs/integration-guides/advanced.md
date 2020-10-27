@@ -5,7 +5,7 @@
 When security of funds is critical, it is a best practice to split your balance between multiple wallets:
 
 1. One or more **hot wallets** to handle daily user deposits/withdraws.
-2. One or more **cold wallets** to securely store Nano in an offline environment.
+2. One or more **cold wallets** to securely store KIZUNANO COIN in an offline environment.
 
 !!! warning "Important"
 	A cold wallet manages private keys that have **never** been on a network-enabled computer.
@@ -27,7 +27,7 @@ This guide extends the concepts covered in [External Private Key Management](/in
 	1. `(COLD)` Verify Head Block hash.
 	1. `(COLD)` Generate and Sign new transaction data.
 	1. Transfer the signed transaction back to the `(HOT)` insecure online-computer.
-	1. `(HOT)` Publish the signed transaction to the Nano Network.
+	1. `(HOT)` Publish the signed transaction to KIZUNANO COIN Network.
 
 
 ```mermaid
@@ -61,8 +61,8 @@ Get account information by the [`account_info`](/commands/rpc-protocol#account_i
 curl -d '{
   "action": "account_info",
   "representative": "true",
-  "account": "nano_3qb1qckpady6njewfotrdrcgakrgbfh7ytqfrd9r8txsx7d91b9pu6z1ixrg"
-}' http://127.0.0.1:7076
+  "account": "kizn_3qb1qckpady6njewfotrdrcgakrgbfh7ytqfrd9r8txsx7d91b9pu6z1ixrg"
+}' http://127.0.0.1:3976
 ```
 
 ##### Success Response
@@ -75,7 +75,7 @@ curl -d '{
   "balance": "8900000000000000000000000",
   "modified_timestamp": "1524812177",
   "block_count": "105",
-  "representative": "nano_3rropjiqfxpmrrkooej4qtmm1pueu36f9ghinpho4esfdor8785a455d16nf"
+  "representative": "kizn_3rropjiqfxpmrrkooej4qtmm1pueu36f9ghinpho4esfdor8785a455d16nf"
 }
 ```
 
@@ -91,7 +91,7 @@ We should always assume the `(HOT)` computer has been compromised, so cannot tru
 curl -d '{
   "action": "block_info",
   "hash": "{{HEADBLOCK}}"
-}' http://127.0.0.1:7076
+}' http://127.0.0.1:3976
 ```
 
 ##### Request Example
@@ -100,26 +100,26 @@ curl -d '{
 curl -d '{
   "action": "block_info",
   "hash": "DC8EC06D1F32F97BD69BF59E3297563BD23779F72176A4FF553CFF52309C337E"
-}' http://127.0.0.1:7076
+}' http://127.0.0.1:3976
 ```
 
 ###### Success Response
 
 ```json
 {
-    "block_account": "nano_3qb1qckpady6njewfotrdrcgakrgbfh7ytqfrd9r8txsx7d91b9pu6z1ixrg",
+    "block_account": "kizn_3qb1qckpady6njewfotrdrcgakrgbfh7ytqfrd9r8txsx7d91b9pu6z1ixrg",
     "amount": "100000000000000000000000",
     "balance": "8900000000000000000000000",
     "height": "105",
     "local_timestamp": "0",
     "contents": "{\n
       \"type\": \"state\",\n
-      \"account\": \"nano_3qb1qckpady6njewfotrdrcgakrgbfh7ytqfrd9r8txsx7d91b9pu6z1ixrg\",\n
+      \"account\": \"kizn_3qb1qckpady6njewfotrdrcgakrgbfh7ytqfrd9r8txsx7d91b9pu6z1ixrg\",\n
       \"previous\": \"829C33C4E1F41F24F50AB6AF8D0893F484E7078F0FA05F8F56CB69223E8EEE77\",\n
-      \"representative\": \"nano_3rropjiqfxpmrrkooej4qtmm1pueu36f9ghinpho4esfdor8785a455d16nf\",\n
+      \"representative\": \"kizn_3rropjiqfxpmrrkooej4qtmm1pueu36f9ghinpho4esfdor8785a455d16nf\",\n
       \"balance\": \"8900000000000000000000000\",\n
       \"link\": \"616349D5A5EBA49A73324EF29044B65E13644EC182FFC1ACA4371F897EFF22AA\",\n
-      \"link_as_account\": \"nano_1rd5b9ctdtx6mbsm6mqkk34deqimej9e51qzr8pcafrzj7zhyaockuye93sk\",\n
+      \"link_as_account\": \"kizn_1rd5b9ctdtx6mbsm6mqkk34deqimej9e51qzr8pcafrzj7zhyaockuye93sk\",\n
       \"signature\": \"5058A5A1D371CE367D88DB232D398B33DF15FF95D84206986848F4165FFD9FB009B99D9DC6E90D2A3D96C639C7772497C6D6FFB8A67143AE9BB07DC49EB72401\",\n
       \"work\": \"5621a5a58ef8964a\"\n
     }\n"
@@ -146,7 +146,7 @@ On the `(COLD)` computer, we need to verify the block hash using the [`block_has
 curl -d '{
   "action": "block_hash",
   "block": "<CONTENTS>"
-}' http://127.0.0.1:7076
+}' http://127.0.0.1:3976
 ```
 
 ##### Request Example
@@ -155,16 +155,16 @@ curl -d '{
 curl -d '{
   "action": "block_hash", "block": "{\n
     \"type\": \"state\",\n
-    \"account\": \"nano_3qb1qckpady6njewfotrdrcgakrgbfh7ytqfrd9r8txsx7d91b9pu6z1ixrg\",\n
+    \"account\": \"kizn_3qb1qckpady6njewfotrdrcgakrgbfh7ytqfrd9r8txsx7d91b9pu6z1ixrg\",\n
     \"previous\": \"829C33C4E1F41F24F50AB6AF8D0893F484E7078F0FA05F8F56CB69223E8EEE77\",\n
-    \"representative\": \"nano_3rropjiqfxpmrrkooej4qtmm1pueu36f9ghinpho4esfdor8785a455d16nf\",\n
+    \"representative\": \"kizn_3rropjiqfxpmrrkooej4qtmm1pueu36f9ghinpho4esfdor8785a455d16nf\",\n
     \"balance\": \"8900000000000000000000000\",\n
     \"link\": \"616349D5A5EBA49A73324EF29044B65E13644EC182FFC1ACA4371F897EFF22AA\",\n
-    \"link_as_account\": \"nano_1rd5b9ctdtx6mbsm6mqkk34deqimej9e51qzr8pcafrzj7zhyaockuye93sk\",\n
+    \"link_as_account\": \"kizn_1rd5b9ctdtx6mbsm6mqkk34deqimej9e51qzr8pcafrzj7zhyaockuye93sk\",\n
     \"signature\": \"5058A5A1D371CE367D88DB232D398B33DF15FF95D84206986848F4165FFD9FB009B99D9DC6E90D2A3D96C639C7772497C6D6FFB8A67143AE9BB07DC49EB72401\",\n
     \"work\": \"5621a5a58ef8964a\"\n
   }\n"
-}' http://127.0.0.1:7076
+}' http://127.0.0.1:3976
 ```
 
 ###### Success Response
@@ -181,7 +181,7 @@ Using the responded hash on the `(COLD)` computer guarentees that the transactio
 	Lets consider the following scenarios where malicious software on the `(HOT)` computer modifies data:
 
 	* You are creating a send transaction.
-	* Malicious software alters the `balance` field of the head block to be lower than it actually is in an attempt to get you to send too much Nano to the destination address.
+	* Malicious software alters the `balance` field of the head block to be lower than it actually is in an attempt to get you to send too much KIZUNANO COIN to the destination address.
 	* This alters the block's hash, but the malicious software could report the honest headblock's hash.
 
 	By independently computing the headblock's hash on the `(COLD)` computer, the generated transaction would be rejected by the network since the `previous` field references a non-existent block which is certainly not the headblock of your account.
@@ -205,16 +205,16 @@ For details on configuring the HTTP callback within a node, see the [HTTP callba
 
 ```json
 {  
-    "account": "nano_1ipx847tk8o46pwxt5qjdbncjqcbwcc1rrmqnkztrfjy5k7z4imsrata9est",  
+    "account": "kizn_1ipx847tk8o46pwxt5qjdbncjqcbwcc1rrmqnkztrfjy5k7z4imsrata9est",  
     "hash": "B785D56473DE6330AC9A2071F19BD44BCAF1DE5C200A826B4BBCC85E588620FB",  
     "block": "{\n    
              \"type\": \"state\",\n
-             \"account\": \"nano_1ipx847tk8o46pwxt5qjdbncjqcbwcc1rrmqnkztrfjy5k7z4imsrata9est\",\n    
+             \"account\": \"kizn_1ipx847tk8o46pwxt5qjdbncjqcbwcc1rrmqnkztrfjy5k7z4imsrata9est\",\n    
              \"previous\": \"82D68AE43E3E04CBBF9ED150999A347C2ABBE74B38D6E506C18DF7B1994E06C2\",\n    
-             \"representative\": \"nano_1stofnrxuz3cai7ze75o174bpm7scwj9jn3nxsn8ntzg784jf1gzn1jjdkou\",\n    
+             \"representative\": \"kizn_1stofnrxuz3cai7ze75o174bpm7scwj9jn3nxsn8ntzg784jf1gzn1jjdkou\",\n    
              \"balance\": \"5256159500000000000000000000000000000\",\n    
              \"link\": \"8B95FEB05496327471F4729F0B0919E1994F9116FD213F44C76F696B7ECD386A\",\n    
-             \"link_as_account\": \"nano_34woztr7b7jkgjrzawnz3e6jmresbyajfzb39x4eguubffzetg5c96f3s16p\",\n    
+             \"link_as_account\": \"kizn_34woztr7b7jkgjrzawnz3e6jmresbyajfzb39x4eguubffzetg5c96f3s16p\",\n    
              \"signature\": \"FBE5CC5491B54FE9CD8C48312A7A6D3945835FD97F4526571E9BED50E407A27ED8FB0E4AA0BF67E2831B8DB32A74E686A62BF4EC162E8FBB6E665196135C050B\",\n    
             \"work\": \"824ca671ce7067ac\"\n    
          }\n",  
@@ -225,16 +225,16 @@ For details on configuring the HTTP callback within a node, see the [HTTP callba
 Send state blocks have special fields "is_send" & "subtype"   
 ```json
 {  
-    "account": "nano_1ipx847tk8o46pwxt5qjdbncjqcbwcc1rrmqnkztrfjy5k7z4imsrata9est",  
+    "account": "kizn_1ipx847tk8o46pwxt5qjdbncjqcbwcc1rrmqnkztrfjy5k7z4imsrata9est",  
     "hash": "82D68AE43E3E04CBBF9ED150999A347C2ABBE74B38D6E506C18DF7B1994E06C2",  
     "block": "{\n    
              \"type\": \"state\",\n
-             \"account\": \"nano_1ipx847tk8o46pwxt5qjdbncjqcbwcc1rrmqnkztrfjy5k7z4imsrata9est\",\n    
+             \"account\": \"kizn_1ipx847tk8o46pwxt5qjdbncjqcbwcc1rrmqnkztrfjy5k7z4imsrata9est\",\n    
              \"previous\": \"BE716FE4E21E0DC923ED67543601090A17547474CBA6D6F4B3FD6C113775860F\",\n    
-             \"representative\": \"nano_1stofnrxuz3cai7ze75o174bpm7scwj9jn3nxsn8ntzg784jf1gzn1jjdkou\",\n    
+             \"representative\": \"kizn_1stofnrxuz3cai7ze75o174bpm7scwj9jn3nxsn8ntzg784jf1gzn1jjdkou\",\n    
              \"balance\": \"5256157000000000000000000000000000000\",\n    
              \"link\": \"5D1AA8A45F8736519D707FCB375976A7F9AF795091021D7E9C7548D6F45DD8D5\",\n    
-             \"link_as_account\": \"nano_1qato4k7z3spc8gq1zyd8xeqfbzsoxwo36a45ozbrxcatut7up8ohyardu1z\",\n    
+             \"link_as_account\": \"kizn_1qato4k7z3spc8gq1zyd8xeqfbzsoxwo36a45ozbrxcatut7up8ohyardu1z\",\n    
              \"signature\": \"5AF10D3DDD0E3D7A0EF18670560D194C35A519943150650BBBE0CBDB2A47A1E41817DA69112F996A9898E11F1D79EF51C041BD57C1686B81E7F9DFCCFFBAB000\",\n    
             \"work\": \"13ae0ea3e2af9004\"\n    
          }\n",  
@@ -250,7 +250,7 @@ Send state blocks have special fields "is_send" & "subtype"
 
 ---
 
-## Running Nano as a service
+## Running KIZUNANO COIN as a service
 
 There are 3 different ways to enable RPC for the node:
 
@@ -264,7 +264,7 @@ There are 3 different ways to enable RPC for the node:
 
 * `rpc.enable` = **true**
 * `rpc.child_process.enable` = **true**
-* `rpc.child_process.rpc_path` = [path to nano_rpc]
+* `rpc.child_process.rpc_path` = [path to kizunano_rpc]
 * `ipc.tcp.enable` = **true**
 * `ipc.tcp.port` = `process.ipc_port` of `config-rpc.toml`
 
@@ -278,35 +278,35 @@ There are 3 different ways to enable RPC for the node:
 
 The choice depends on the setup and security that you want. The easiest way is to use RPC *in_process* according to [configuration](/running-a-node/configuration)
 
-**Launch nano_node in test mode**   
+**Launch kizunano_node in test mode**   
 
-    ./nano_node --daemon --network=test
+    ./kizunano_node --daemon --network=test
 
 **Check if RPC is enabled with curl (use different terminal or session)**   
 
-    curl -g -d '{ "action": "block_count" }' '[::1]:7076'
+    curl -g -d '{ "action": "block_count" }' '[::1]:3976'
 
 !!! tip
-    If you get `curl: (7) Couldn't connect to server`, replace `[::1]:7076` with `127.0.0.1:7076`.
+    If you get `curl: (7) Couldn't connect to server`, replace `[::1]:3976` with `127.0.0.1:3976`.
 
 **To stop node, use**   
 
-    curl -g -d '{ "action": "stop" }' '[::1]:7076'
+    curl -g -d '{ "action": "stop" }' '[::1]:3976'
 
-**Launch nano_node as a service with systemd**   
+**Launch kizunano_node as a service with systemd**   
 
-    sudo touch /etc/systemd/system/nano_node.service   
-    sudo chmod 664 /etc/systemd/system/nano_node.service   
-    sudo nano /etc/systemd/system/nano_node.service   
+    sudo touch /etc/systemd/system/kizunano_node.service   
+    sudo chmod 664 /etc/systemd/system/kizunano_node.service   
+    sudo nano /etc/systemd/system/kizunano_node.service   
 
 **Paste your specific user, group, path settings (example)**  
     
     [Unit]
-    Description=Nano node service
+    Description=KIZUNANO COIN node service
     After=network.target
     
     [Service]
-    ExecStart=/path_to_nano_node/nano_node --daemon
+    ExecStart=/path_to_kizunano_node/kizunano_node --daemon
     Restart=on-failure
     User=username
     Group=groupname
@@ -314,13 +314,13 @@ The choice depends on the setup and security that you want. The easiest way is t
     [Install]
     WantedBy=multi-user.target
 
-**Start nano_node service**
+**Start kizunano_node service**
 
-    sudo service nano_node start
+    sudo service kizunano_node start
 
 **Enable at startup**    
 
-    sudo systemctl enable nano_node
+    sudo systemctl enable kizunano_node
     
     
 !!! tip
@@ -337,4 +337,4 @@ Increase max open files limit. Edit `/etc/security/limits.conf` & add
     root            soft    nofile          65535    
     root            hard    nofile          65535    
 ```
-Then restart session & nano_node service. Check changes with `ulimit -n`
+Then restart session & kizunano_node service. Check changes with `ulimit -n`

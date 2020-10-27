@@ -1,9 +1,9 @@
-site_name: Nano Docs
-site_url: https://docs.nano.org/
+site_name: KIZUNANO COIN docs
+site_url: https://docs.kizunanocoin.com/
 theme:
   name: 'material'
   palette:
-    primary: '#4a90e2'
+    primary: '#39b6ff'
     accent: '#131121'
   font:
     text: 'Noto Sans'
@@ -15,7 +15,7 @@ theme:
   custom_dir: 'theme'
 nav:
   - Home: index.md
-  - What is Nano?:
+  - What is KIZUNANO COIN?:
     - Overview: what-is-nano/overview.md
     - Living Whitepaper: what-is-nano/living-whitepaper.md
   - Running a Node:
@@ -62,13 +62,6 @@ nav:
     - Voting: node-implementation/voting.md
     - Work: node-implementation/work.md
     - Contributing: node-implementation/contributing.md
-  - Releases:
-    - Node Releases: releases/node-releases.md
-    - Current Release Notes: releases/current-release-notes.md
-    - Previous Release Notes: releases/previous-release-notes.md
-    - Network Upgrades: releases/network-upgrades.md
-    - Upcoming Features: releases/upcoming-features.md
-    - Roadmap: releases/roadmap.md
   - Glossary: glossary.md
 markdown_extensions:
   - admonition
@@ -115,25 +108,15 @@ extra_css:
 extra:
   social:
   - icon: 'fontawesome/brands/github'
-    link: 'https://github.com/nanocurrency'
+    link: 'https://github.com/kizunanocoin'
   - icon: 'fontawesome/brands/twitter'
-    link: 'https://twitter.com/nano'
+    link: 'https://twitter.com/newkizunacoin'
   - icon: 'material/comment-multiple'
-    link: 'https://chat.nano.org'
-  - icon: 'fontawesome/brands/reddit'
-    link: 'https://reddit.com/r/nanocurrency'
+    link: 'https://chat.kizunanocoin.com'
   - icon: 'fontawesome/brands/medium'
-    link: 'https://medium.com/nanocurrency'
-  - icon: 'fontawesome/brands/facebook'
-    link: 'https://facebook.com/nanofoundation'
-  - icon: 'fontawesome/brands/linkedin'
-    link: 'https://linkedin.com/company/nano-foundation'
-  - icon: 'fontawesome/brands/youtube'
-    link: 'https://www.youtube.com/nanocurrency/'
-  - icon: 'fontawesome/brands/instagram'
-    link: 'https://www.instagram.com/nanocurrency/'
-repo_name: 'nanocurrency/nano-docs'
-repo_url: 'https://github.com/nanocurrency/nano-docs'
+    link: 'https://kizunacoinnewsystem9486458.medium.com/'
+repo_name: 'kizunanocoin/docs'
+repo_url: 'https://github.com/kizunanocoin/docs'
 plugins:
     - search
     - redirects:

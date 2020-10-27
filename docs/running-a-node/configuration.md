@@ -1,6 +1,6 @@
 # Node Configuration
 
-The Nano node software is designed to run with little or no configuration. All configuration options have defaults that can be changed using TOML configuration files, by passing configuration values via the command line, or a combination of the two methods.
+KIZUNANO COIN node software is designed to run with little or no configuration. All configuration options have defaults that can be changed using TOML configuration files, by passing configuration values via the command line, or a combination of the two methods.
 
 !!! success "Automatic migration and backups of JSON files"
     Versions prior to 20 use JSON as the configuration file format, and these will be automatically migrated to TOML files on startup. Note that only non-default values are migrated.
@@ -20,7 +20,7 @@ The Nano node software is designed to run with little or no configuration. All c
 	    "account": "(string)", // Default account to load on boot (only for GUI wallet)
 	    "node": {
 	        "version": "(int)", // Node version
-	        "peering_port": "7075", // Default node port
+	        "peering_port": "3975", // Default node port
 	        "bootstrap_fraction_numerator": "1",
 	        "enable_voting": "false", // Enable or disable voting for blocks. If disabled, saves some resources
 	        "receive_minimum": "1000000000000000000000000", // Minimum import receivable, default 1 Rai
@@ -53,18 +53,18 @@ The Nano node software is designed to run with little or no configuration. All c
 	        "vote_minimum": "1000000000000000000000000000000000",// Prevents voting if delegated weight is under this threshold
 	        "work_peers": "", // Delegate a node your hash work, you need to get RPC access to that node
 	        "preconfigured_peers": [ // List of defaults peers to connect on boot
-	            "peering.nano.org",
+	            "peering.kizunanocoin.com",
 	            "::ffff:138.201.94.249"
 	        ],
 	        "preconfigured_representatives": [ // List of defaults representatives, which you delegate voting weight, of your wallet
-	            "nano_3arg3asgtigae3xckabaaewkx3bzsh7nwz7jkmjos79ihyaxwphhm6qgjps4",
-	            "nano_1stofnrxuz3cai7ze75o174bpm7scwj9jn3nxsn8ntzg784jf1gzn1jjdkou",
-	            "nano_1q3hqecaw15cjt7thbtxu3pbzr1eihtzzpzxguoc37bj1wc5ffoh7w74gi6p",
-	            "nano_3dmtrrws3pocycmbqwawk6xs7446qxa36fcncush4s1pejk16ksbmakis78m",
-	            "nano_3hd4ezdgsp15iemx7h81in7xz5tpxi43b6b41zn3qmwiuypankocw3awes5k",
-	            "nano_1awsn43we17c1oshdru4azeqjz9wii41dy8npubm4rg11so7dx3jtqgoeahy",
-	            "nano_1anrzcuwe64rwxzcco8dkhpyxpi8kd7zsjc1oeimpc3ppca4mrjtwnqposrs",
-	            "nano_1hza3f7wiiqa7ig3jczyxj5yo86yegcmqk3criaz838j91sxcckpfhbhhra1"
+	            "kizn_3arg3asgtigae3xckabaaewkx3bzsh7nwz7jkmjos79ihyaxwphhm6qgjps4",
+	            "kizn_1stofnrxuz3cai7ze75o174bpm7scwj9jn3nxsn8ntzg784jf1gzn1jjdkou",
+	            "kizn_1q3hqecaw15cjt7thbtxu3pbzr1eihtzzpzxguoc37bj1wc5ffoh7w74gi6p",
+	            "kizn_3dmtrrws3pocycmbqwawk6xs7446qxa36fcncush4s1pejk16ksbmakis78m",
+	            "kizn_3hd4ezdgsp15iemx7h81in7xz5tpxi43b6b41zn3qmwiuypankocw3awes5k",
+	            "kizn_1awsn43we17c1oshdru4azeqjz9wii41dy8npubm4rg11so7dx3jtqgoeahy",
+	            "kizn_1anrzcuwe64rwxzcco8dkhpyxpi8kd7zsjc1oeimpc3ppca4mrjtwnqposrs",
+	            "kizn_1hza3f7wiiqa7ig3jczyxj5yo86yegcmqk3criaz838j91sxcckpfhbhhra1"
 	        ],
 	        "online_weight_minimum": "60000000000000000000000000000000000000", // Online weight minimum required to confirm block
 	        "online_weight_quorum": "50", // Percentage of votes required to rollback blocks
@@ -72,7 +72,7 @@ The Nano node software is designed to run with little or no configuration. All c
 	        "io_threads": "4",
 	        "work_threads": "4", // PoW work threads. By default all available CPU threads, set lower value for 24/7 services
 	        "callback_address": "::ffff:127.0.0.1", // Callback IP address, in sample IPv4 localhost
-	        "callback_port": "17076", // Callback port
+	        "callback_port": "13976", // Callback port
 	        "callback_target": "/", // Callback target, in sample root of callback listening server
 	        "bootstrap_connections": "16", // Multi-connection bootstrap. Should be a power of 2.
 	        "bootstrap_connections_max": "4", // Allowed incoming bootstrap connections count. Lower value save IOPS & bandwidth. 64 recommended for high-end fast nodes, 0 for HDD home users,
@@ -89,7 +89,7 @@ The Nano node software is designed to run with little or no configuration. All c
 	        "websocket": {
 	            "enable": "false",
 	            "address": "::1", // Default IPv6 address to listen on. If using Docker, change address to ::ffff:0.0.0.0 to listen on all interfaces within the container.
-	            "port": "7078"
+	            "port": "3978"
 	        },
 	        "ipc": { // For more details about these options see the IPC section below
 	            "tcp": {
@@ -131,7 +131,7 @@ The Nano node software is designed to run with little or no configuration. All c
 	        "version": "1",
 	        "child_process": {
 	            "enable": "false", // Whether the rpc server is run as a child process rather than in-process
-	            "rpc_path": "C:\\Users\\Wesley\\Documents\\raiblocks\\build\\Debug\\nano_rpc.exe", // The nano_rpc executable to run if enabled (Windows example).
+	            "rpc_path": "C:\\Users\\Wesley\\Documents\\raiblocks\\build\\Debug\\kizunano_rpc.exe", // The kizunano_rpc executable to run if enabled (Windows example).
 	        }
 	    },
 	    "opencl_enable": "false", // Enable GPU hashing
@@ -181,11 +181,11 @@ Instead of changing the config file, config values can be passed in via the `--c
 
 Example that enables the RPC and WebSocket servers:
 
-`nano_node --config rpc.enable=true --config node.websocket.enable=true`
+`kizunano_node --config rpc.enable=true --config node.websocket.enable=true`
 
 Strings are passed with escaped quotes (`\"`), such as:
 
-`nano_node --config node.httpcallback.target=\"api/callback\"`
+`kizunano_node --config node.httpcallback.target=\"api/callback\"`
 
 !!! info "Mixing config options on the command line and TOML files"
     If a config file exists, config values passed in via the command line will take precedence.
@@ -224,7 +224,7 @@ enable_control = false
 !!! danger "Dangerous RPC calls controlled by `enable_control`"
 	Due to the sensitive or dangerous nature of these calls, **caution should be used when considering setting `enable_control` to `true`** in your config file. It is highly recommended to **only enable this when RPC ports are listening exclusively to local or loopback IP addresses** or other measure are put in place outside the node to limit RPC access to dangerous calls. For more details see the [Node Security page](security.md).
 
-More advanced options for controlling the process the RPC server runs under can be found in the [Running Nano as a service guide](../integration-guides/advanced.md#running-nano-as-a-service).
+More advanced options for controlling the process the RPC server runs under can be found in the [Running KIZUNANO COIN as a service guide](../integration-guides/advanced.md#running-nano-as-a-service).
 
 #### logging.stable_log_filename
 

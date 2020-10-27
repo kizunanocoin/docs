@@ -1,4 +1,4 @@
-Title: Nano Protocol Design - ORV Consensus
+Title: KIZUNANO COIN Protocol Design - ORV Consensus
 
 # Protocol Design - ORV Consensus
 

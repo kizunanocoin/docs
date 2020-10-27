@@ -1,5 +1,5 @@
-title: IPC Integration | Nano Documentation
-description: Learn how to integration into the Nano node using the Interprocess communication (IPC) interface.
+title: IPC Integration | KIZUNANO COIN Documentation
+description: Learn how to integration into KIZUNANO COIN node using the Interprocess communication (IPC) interface.
 
 The node manages communications using an IPC interface with v1 introduced in V18 (see [IPC v1 Details](#ipc-v1-details)) and upgraded to v2 in V21 to include more robust options. This latest version supports the original RPC v1 endpoint and introduces RPC v2 for completion in future release, along with an authentication system for more granular control of permissioned calls.
 
@@ -84,10 +84,10 @@ A message envelope is a way to tell the server which message type is sent, as we
 
 For HTTP clients, it's convenient to send messages _without_ an envelope. They do so by appending the message name (using uppercase CamelCase) to the path:
 
-`POST` to https://www.example.com:7076/api/v2/AccountWeight
+`POST` to https://www.example.com:3976/api/v2/AccountWeight
 ```
 {
-    "account": "nano_3t6k35gi95xu6tergt6p69ck76ogmitsa8mnijtpxm9fkcm736xtoncuohr3"
+    "account": "kizn_3t6k35gi95xu6tergt6p69ck76ogmitsa8mnijtpxm9fkcm736xtoncuohr3"
 }
 ```
 
@@ -136,12 +136,12 @@ The correlation header is Nano-Correlation-Id, which can be an arbitrary string.
 
 If the message name is missing from the path, an envelope will be expected which tells the node about the message type.
 
-`POST` to https://www.example.com:7076/api/v2
+`POST` to https://www.example.com:3976/api/v2
 ```json
 { 
     "message_type" : "AccountWeight", 
     "message": {
-        "account": "nano_3t6k35gi95xu6tergt6p69ck76ogmitsa8mnijtpxm9fkcm736xtoncuohr3"
+        "account": "kizn_3t6k35gi95xu6tergt6p69ck76ogmitsa8mnijtpxm9fkcm736xtoncuohr3"
     }
 }
 ```
@@ -150,14 +150,14 @@ The above is similar to using the "action" property in RPC 1.0. The main differe
 
 The envelope allows additional information to be sent, such as credentials:
 
-`POST` to https://www.example.com:7076/api/v2
+`POST` to https://www.example.com:3976/api/v2
 
 ```json
 { 
     "credentials": "mywalletuser",  
     "message_type" : "AccountWeight", 
     "message": {
-        "account": "nano_3t6k35gi95xu6tergt6p69ck76ogmitsa8mnijtpxm9fkcm736xtoncuohr3"
+        "account": "kizn_3t6k35gi95xu6tergt6p69ck76ogmitsa8mnijtpxm9fkcm736xtoncuohr3"
     }
 }
 ```
@@ -169,12 +169,12 @@ While somewhat less convenient, the envelope approach is desirable for very larg
 
 ### Flatbuffers mapping
 
-Here's the corresponding [message definitions](https://github.com/nanocurrency/nano-node/blob/master/api/flatbuffers/nanoapi.fbs) for the AccountWeight request and response types:
+Here's the corresponding [message definitions](https://github.com/kizunanocoin/node/blob/master/api/flatbuffers/nanoapi.fbs) for the AccountWeight request and response types:
 
 ```
 /** Returns the voting weight for the given account */
 table AccountWeight {
-    /** A nano_ address */
+    /** A kizn_ address */
     account: string (required);
 }
 
@@ -208,7 +208,7 @@ Any problems with the JSON request will be reported with error details:
 !!! warning "Work in progress"
     Permission settings is a work in progress, and their exact definition and defaults will be part of RPC 2.0 in a future node release.
 
-With IPC 2.0, the Nano node offers an authorization system.
+With IPC 2.0, KIZUNANO COIN node offers an authorization system.
 
 The configuration is done in `config-access.toml` by defining users and optional roles. Permissions are then assigned to these. The node only checks for permissions, never roles. This way, you can freely structure roles and users the way that suits your situation.
 
@@ -226,8 +226,8 @@ Credentials:
 
 ```bash
 curl --header "Nano-Api-Key:mywalletuser" --insecure -d \
-   '{ "account": "nano_3t6k35gi95xu6tergt6p69ck76ogmitsa8mnijtpxm9fkcm736xtoncuohr3"}' \
-   https://www.example.com:7076/api/v2/AccountWeight
+   '{ "account": "kizn_3t6k35gi95xu6tergt6p69ck76ogmitsa8mnijtpxm9fkcm736xtoncuohr3"}' \
+   https://www.example.com:3976/api/v2/AccountWeight
 ```
 This uses HTTPS (which the node supports through a build option), and the `--insecure` is there because the node's certificate in this example is self-signed.
 
@@ -239,12 +239,12 @@ Using an envelope instead of the `AccountWeight` endpoint:
    "message_type" : "AccountWeight", 
    "message": 
    {
-       "account": "nano_3t6k35gi95xu6tergt6p69ck76ogmitsa8mnijtpxm9fkcm736xtoncuohr3" 
+       "account": "kizn_3t6k35gi95xu6tergt6p69ck76ogmitsa8mnijtpxm9fkcm736xtoncuohr3" 
    }
 } 
 ```
 
-`POST` the above to https://www.example.com:7076/api/v2
+`POST` the above to https://www.example.com:3976/api/v2
 
 ### Configuration examples
 
@@ -296,7 +296,7 @@ bare = true
 
 The access file can be reloaded without restarting the node or wallet. For the node:
 
-`killall -SIGHUP nano_node`
+`killall -SIGHUP kizunano_node`
 
 (actual syntax depends on OS)
 
@@ -304,7 +304,7 @@ The access file can be reloaded without restarting the node or wallet. For the n
 
 ## IPC V1 Details
 
-As of v18, the Nano node exposes a low level IPC interface over which multiple future APIs can be marshalled. Currently, the IPC interface supports the legacy RPC JSON format. The HTTP based RPC server is still available. Because the only IPC encoding is currently "legacy RPC", RPC config options like "enable_control" still apply.
+As of v18, KIZUNANO COIN node exposes a low level IPC interface over which multiple future APIs can be marshalled. Currently, the IPC interface supports the legacy RPC JSON format. The HTTP based RPC server is still available. Because the only IPC encoding is currently "legacy RPC", RPC config options like "enable_control" still apply.
 
 **Transports**
 

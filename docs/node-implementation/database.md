@@ -1,4 +1,4 @@
-Title: Nano Node Implementation - Database
+Title: KIZUNANO COIN Node Implementation - Database
 
 # Node Implementation - Database
 

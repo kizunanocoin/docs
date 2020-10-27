@@ -1,5 +1,5 @@
-title: Work Generation | Nano Documentation
-description: Understand the best configurations for work generation on the Nano network.
+title: Work Generation | KIZUNANO COIN Documentation
+description: Understand the best configurations for work generation on KIZUNANO COIN network.
 
 !!!tip "Some sections of this page target node version 21 or higher"
 
@@ -9,7 +9,7 @@ This work value is not used in consensus, but instead is one of the first pieces
 
 ## System considerations
 
-The following configuration options should be taken into careful consideration when planning work generation resources for services integrating with Nano. These options should be combined to provide the best separation of resources between node participation on network vs. work generation needs.
+The following configuration options should be taken into careful consideration when planning work generation resources for services integrating with KIZUNANO COIN. These options should be combined to provide the best separation of resources between node participation on network vs. work generation needs.
 
 !!! warning "Representatives should avoid heavy RPC use and work generation"
     Supporting the network by running a representative is recommended for many services, however it is not recommended that voting nodes are used for heavy RPC or work generation activities. Wherever possible, integrations should utilize separate machines for their integration nodes and consensus-producing, voting nodes.
@@ -24,7 +24,7 @@ Using a separate machine to manage work generation is recommended where possible
 
 ### Software for work generation
 
-Although the node can be configured to generate work directly, there are plans to separate work generation from the node into its own application and process. To help prepare for this future architecturs the preferred setup today is to use the [Nano Work Server](https://github.com/nanocurrency/nano-work-server) for work generation.
+Although the node can be configured to generate work directly, there are plans to separate work generation from the node into its own application and process. To help prepare for this future architecturs the preferred setup today is to use the [KIZUNANO COIN Work Server](https://github.com/nanocurrency/nano-work-server) for work generation.
 
 ### Number of work peers
 
@@ -38,15 +38,15 @@ To provide a more robust and redundant work generation setup, multiple [work pee
 Below are common, recommended configurations for planning work generation needs. Based on the considerations outlined above, the following general rules apply when planning resources:
 
 - GPU-based work generation is recommended wherever reasonable
-- Running the [Nano Work Server](https://github.com/nanocurrency/nano-work-server) is preferred, regardless of machine or CPU/GPU decisions
+- Running the [KIZUNANO COIN Work Server](https://github.com/nanocurrency/nano-work-server) is preferred, regardless of machine or CPU/GPU decisions
 - CPU-based work generation on the same machine the node is running is not recommended
 
 ### Heavy RPC, regular work generation
 
-Services with heavy RPC calls and work generation can benefit from ensuring dedicated resources exist for each process separately. To maximize performance a separate machine running the [Nano Work Server](https://github.com/nanocurrency/nano-work-server) with a GPU attached is recommended:
+Services with heavy RPC calls and work generation can benefit from ensuring dedicated resources exist for each process separately. To maximize performance a separate machine running the [KIZUNANO COIN Work Server](https://github.com/nanocurrency/nano-work-server) with a GPU attached is recommended:
 
 1. Setup a machine separate from the node with GPU attached
-1. Install the [Nano Work Server](https://github.com/nanocurrency/nano-work-server/blob/master/README.md#installation)
+1. Install the [KIZUNANO COIN Work Server](https://github.com/nanocurrency/nano-work-server/blob/master/README.md#installation)
 1. Setup a service to start and monitor the work server process using the GPU option `--gpu <PLATFORM:DEVICE>` and run `nano-work-server --help` for additional options and details
 1. Configure the machine running the node to allow traffic over TCP from the work generation machine's IP address
 1. Add the work machine IP address as a [work peer](#nodework_peers) in the node's `config-node.toml` file
@@ -60,12 +60,12 @@ Services with heavy RPC calls and work generation can benefit from ensuring dedi
 
 Services where RPC usage is lighter but regular work generation is needed could move work generation to the same machine if a GPU is used:
 
-1. Install the [Nano Work Server](https://github.com/nanocurrency/nano-work-server/blob/master/README.md#installation) on the same machine as the node
+1. Install the [KIZUNANO COIN Work Server](https://github.com/nanocurrency/nano-work-server/blob/master/README.md#installation) on the same machine as the node
 1. Setup a service to start and monitor the work server process with options for using the GPU - `--gpu <PLATFORM:DEVICE:THREADS>` is required, run `nano-work-server --help` for additional options and details
 1. Configure the node to prevent local CPU work generation by setting [`node.work_threads`](#nodework_threads) = `0`
 
 !!! info "Node work generation option"
-	A less preferred alternative to setting up, running and monitoring the Nano Work Server is to use the node itself to generate work. This should only be done with an attached GPU by setting up and enabling OpenCL with [`opencl.enable`](#openclenable) = `true` and adusting `opencl.device` and `opencl.platform` to match your setup.
+	A less preferred alternative to setting up, running and monitoring KIZUNANO COIN Work Server is to use the node itself to generate work. This should only be done with an attached GPU by setting up and enabling OpenCL with [`opencl.enable`](#openclenable) = `true` and adusting `opencl.device` and `opencl.platform` to match your setup.
 
 ---
 
@@ -134,7 +134,7 @@ Used when offloading work generation to another node or service. Format must be 
 [node]
 work_peers = [
     "example.work-peer.org:7000",
-    "::ffff:192.168.1.25:7076"
+    "::ffff:192.168.1.25:3976"
 ]
 ```
 
@@ -148,9 +148,9 @@ Sets a limit on the generation difficulty. Multiplier is based off the [base dif
 
 ### Benchmark commands
 
-**Nano Work Server**
+**KIZUNANO COIN Work Server**
 
-The [Nano Work Server](https://github.com/nanocurrency/nano-work-server) is the preferred approach for benchmarking and includes an [example](https://github.com/nanocurrency/nano-work-server#benchmarking).
+The [KIZUNANO COIN Work Server](https://github.com/nanocurrency/nano-work-server) is the preferred approach for benchmarking and includes an [example](https://github.com/nanocurrency/nano-work-server#benchmarking).
 
 **Node RPC**
 
@@ -161,9 +161,9 @@ The [Nano Work Server](https://github.com/nanocurrency/nano-work-server) is the 
 
 Note that these commands do not use the configuration of the node. Prefer using the alternative above for that purpose, such as changing the number of threads for CPU work generation, or using work peers.
 
-[CPU](../commands/command-line-interface.md#-debug_profile_generate) with all available threads: `nano_node --debug_profile_generate [--difficulty fffffff800000000] [--multiplier 1.0]`
+[CPU](../commands/command-line-interface.md#-debug_profile_generate) with all available threads: `kizunano_node --debug_profile_generate [--difficulty fffffff800000000] [--multiplier 1.0]`
 
-[GPU](../commands/command-line-interface.md#-debug_opencl) acceleration: `nano_node --debug_opencl --platform=0 --device=0 [--difficulty fffffff800000000] [--multiplier 1.0]`
+[GPU](../commands/command-line-interface.md#-debug_opencl) acceleration: `kizunano_node --debug_opencl --platform=0 --device=0 [--difficulty fffffff800000000] [--multiplier 1.0]`
 
 The command will trigger continual work generation, so let it run until a sufficient sample size of times are generated (at least 100 instances). Compute the average of these times which are the number of microseconds it took to generate each sample.
 
@@ -213,15 +213,15 @@ $$
 
 ### Difficulty thresholds
 
-The mainnet's base difficulty threshold is currently `fffffff800000000` for all send or change blocks and `fffffe0000000000` for all receive blocks. These split difficulties were set as part of the [network upgrade to increase difficulty](../releases/network-upgrades.md#increased-work-difficulty) completed at the end of August 2020.
+The mainnet's base difficulty threshold is currently `0xffc0000000000000` for all send or change blocks and `c` for all receive blocks.
 
 Previous difficulty levels are outlined below as well for historical reference, but currently the epoch v2 thresholds are required when publishing new blocks to the network:
 
 | Epoch version | Block Type | Difficulty Threshold |
 |               |            |                      |
-| 1             | All        | `ffffffc000000000`   |
-| 2             | Send or change | `fffffff800000000` |
-| 2             | Receive        | `fffffe0000000000` |
+| 1             | All        | `0xfe00000000000000`   |
+| 2             | Send or change | `0xffc0000000000000` |
+| 2             | Receive        | `0xf000000000000000` |
 
 For a block to be valid, its work field must satisfy the above work equations using this value for threshold. Nodes also prioritize the order in which they confirm transactions based on how far above this threshold the work value is. This only happens in case of saturation.
 

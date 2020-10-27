@@ -1,16 +1,16 @@
-title: Contributing code to the Nano node | Nano Documentation
+title: Contributing code to KIZUNANO COIN node | KIZUNANO COIN Documentation
 
-# Contributing code to the Nano node
+# Contributing code to KIZUNANO COIN node
 
 ## About the code base
 
-Nano is written in C++14 and supports Linux, macOS and Windows.
+KIZUNANO COIN is written in C++14 and supports Linux, macOS and Windows.
 
 **Libraries**
 
 We use Boost to help us write efficient cross platform code, including the async IO library for networking (asio).
 
-Make sure you have the correct [Boost version](https://github.com/nanocurrency/nano-node/search?utf8=%E2%9C%93&q=find_package+%28Boost&type=) installed.
+Make sure you have the correct [Boost version](https://github.com/kizunanocoin/node/search?utf8=%E2%9C%93&q=find_package+%28Boost&type=) installed.
 
 **Submodules**
 
@@ -25,7 +25,7 @@ Make sure you have the correct [Boost version](https://github.com/nanocurrency/n
 
 To build the GUI, set the `NANO_GUI` flag in cmake. The desktop wallet uses Qt5, but without the MOC compiler. Hence, you cannot use the signals and slots mechanism.
 
-The majority of the Qt wallet code resides in the `qt` subproject, while the QApplication startup code resides in `nano_wallet`.
+The majority of the Qt wallet code resides in the `qt` subproject, while the QApplication startup code resides in `kizunano_wallet`.
 
 **Using CMake**
 
@@ -53,12 +53,12 @@ If you get a lot of failures, such as `frontier_req.begin` failing, make sure `A
 
 ## GitHub collaboration
 
-Communication is the key to working together efficiently. A good way to get in touch with the developers is to join the #development channel on [Discord](https://chat.nano.org/). If you have an idea of an improvement or new feature, consider discussing it first with the team, either on Discord, or by adding an issue. Maybe someone is already working on it, or have suggestions on how to improve on the idea.
+Communication is the key to working together efficiently. A good way to get in touch with the developers is to join the #development channel on [Discord](https://chat.kizunanocoin.com). If you have an idea of an improvement or new feature, consider discussing it first with the team, either on Discord, or by adding an issue. Maybe someone is already working on it, or have suggestions on how to improve on the idea.
 
 !!! warning "Security Vulnerability Disclosure"
 	**Do NOT discuss potential security vulnerabilities on the issue tracker, public forums or open discussion channels**
 
-	If you discover a bug you believe to pose a security risk to the Nano network, please contact bugs@nano.org with a proof of concept with full details of the bug including:
+	If you discover a bug you believe to pose a security risk to KIZUNANO COIN network, please contact bugs@nano.org with a proof of concept with full details of the bug including:
 	
 	* Repository of the bug
 	* High-level summary
@@ -71,7 +71,7 @@ Communication is the key to working together efficiently. A good way to get in t
 
 #### Fork and do all your work on a branch
 
-Nano prefers the standard GitHub workflow. You create a fork of the Nano repository, make branches for features/issues, and commit and push these. 
+KIZUNANO COIN prefers the standard GitHub workflow. You create a fork of KIZUNANO COIN repository, make branches for features/issues, and commit and push these. 
 
 #### Create pull requests
 
@@ -159,7 +159,7 @@ Your code will be reviewed with security in mind, but please do your part before
 
 ## General tips for contributors
 
-* Read the [white paper](https://nano.org/en/whitepaper)
+* Read the [white paper](https://newkizunacoin.com/)
 * Peruse the code and don't be shy about asking questions if there are parts you don't understand.
 * Make sure you understand the GitHub workflow.
 * Participate in the community by reading and replying to GitHub issues, Reddit posts and tweets. This gives you a great insight into the pain points that exists with the software.

@@ -5,13 +5,13 @@ For keeping a closer watch on node performance a Prometheus-based exporter monit
 Prometheus is an open-source systems monitoring and alerting toolkit. For a brief overview of everything it offers, see [What is Prometheus?](https://prometheus.io/docs/introduction/overview/)
 
 !!! tip "Basic monitoring option"
-	For a simpler monitoring setup that is maintained by the Nano community and provides a public website to view details on, see the [monitoring details on the Voting as a Representative page](voting-as-a-representative.md#setup-monitoring).
+	For a simpler monitoring setup that is maintained by KIZUNANO COIN community and provides a public website to view details on, see the [monitoring details on the Voting as a Representative page](voting-as-a-representative.md#setup-monitoring).
 
 ## Recommended architecture
 
 The diagram below illustrates a recommended architecture of components:
 
-![Nano node Prometheus exporter architecture](../images/nano-prometheus-exporter-architecture.png)
+![KIZUNANO COIN node Prometheus exporter architecture](../images/nano-prometheus-exporter-architecture.png)
 
 This configuration was recommended as it splits the concerns across two servers: one hosting the node and exporter, with another hosting the push gateway, Prometheus server and graphing/visualization tools. However, there are a variety of configuration options to allow separation of each component onto different servers, depending on the needs.
 
@@ -19,11 +19,11 @@ This configuration was recommended as it splits the concerns across two servers:
 
 The following provides the basic details for installing and connecting the components outlined above.
 
-### Step 1: Setup and configure Nano node
+### Step 1: Setup and configure KIZUNANO COIN node
 
 These configuration options are set in the [`config-node.toml` file](../running-a-node/configuration.md#configuration-file-locations).
 
-* Get a [Nano node setup](node-setup.md) with Docker or binaries
+* Get a [KIZUNANO COIN node setup](node-setup.md) with Docker or binaries
 * Update config `node.rpc.enable` = `true`
 * If you want to gather [`nano_stats_objects*` metrics](https://github.com/nanocurrency/nano_prom_exporter#stats-exposed), update config `rpc.enable_control` = `true`
 * Restart the node for settings to take effect
@@ -36,7 +36,7 @@ For the best security, it is recommended to run this on a separate server. By de
 * Download and run the [prometheus-pushgateway](https://github.com/prometheus/pushgateway/blob/master/README.md#run-it)
 * Accept incoming TCP port `9091` connections from the node/exporter server
 
-### Step 3: Install and run the Nano node exporter
+### Step 3: Install and run KIZUNANO COIN node exporter
 
 Typical configurations will have the exporter running on the same server as the node. If so, `--rpchost` is local as noted below.
 
@@ -48,7 +48,7 @@ Typical configurations will have the exporter running on the same server as the 
 
 ```shell
 nano-prom -h --rpchost ::1 \
-             --rpcport 7076 \
+             --rpcport 3976 \
              --datapath ~/Nano/Nano \
              --pushgateway your-exporter-and-node.server.org:9091 \
              --hostname MyNanoMetrics
@@ -78,4 +78,4 @@ The exporter supports sending metrics to multiple push gateways using a `config.
 
 Although no public push gateways for node monitoring are available at this time, there may be opportunities in the future to share your node metrics with the community or other monitoring setups to provide a better view of network performance. Check back here and keep an eye out for these public gateways to become available.
 
-And if you know of any public push gateways available to send this useful node data to, [please let us know](https://nano.org/connect).
+And if you know of any public push gateways available to send this useful node data to, [please let us know](https://newkizunacoin.com/).

@@ -1,4 +1,4 @@
-Title: Nano Node Implementation - Components
+Title: KIZUNANO COIN Node Implementation - Components
 
 # Node Implementation - Components
 

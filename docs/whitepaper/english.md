@@ -301,7 +301,7 @@ representative.
 open {
    account: DC04354B1...AE8FA2661B2,
    source: DC1E2B3F7C...182A0E26B4A,
-   representative: xrb_1anr...posrs,
+   representative: kiz_1anr...posrs,
    work: 0000000000000000,
    type: open,
    signature: 83B0...006433265C7B204
@@ -336,7 +336,7 @@ transaction.
 send {
    previous: 1967EA355...F2F3E5BF801,
    balance: 010a8044a0...1d49289d88c,
-   destination: xrb_3w...m37goeuufdp,
+   destination: kiz_3w...m37goeuufdp,
    work: 0000000000000000,
    type: send,
    signature: 83B0...006433265C7B204
@@ -378,7 +378,7 @@ the representative does not have spending power of the account's funds.
 ```
 change {
    previous: DC04354B1...AE8FA2661B2,
-   representative: xrb_1anrz...posrs,
+   representative: kiz_1anrz...posrs,
    work: 0000000000000000,
    type: change,
    signature: 83B0...006433265C7B204

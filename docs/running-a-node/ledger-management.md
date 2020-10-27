@@ -5,7 +5,7 @@
 
 ## Ledger file
 
-The node automatically manages the full Nano ledger in the `data.ldb` file which can be found in the data directory at these locations:
+The node automatically manages the full KIZUNANO COIN ledger in the `data.ldb` file which can be found in the data directory at these locations:
 
 --8<-- "directory-locations.md"
 
@@ -58,7 +58,7 @@ The additional resource usage these options cause should be considered, especial
 !!! tip "Always backup your ledgers file"
 	Whenever you are attempting to change the ledger, it is highly recommended you create backups of the existing `data.ldb` file to ensure you have a rollback point if issues are encountered.
 
-To avoid bootstrapping times, a [ledger file](#ledger-file) (`data.ldb`) can be downloaded off-network and added to the data file used by the node. This process is sometimes referred to as a "fast sync". The Nano Foundation provides a daily ledger file download in the `#ledger` channel of our [Discord server](https://chat.nano.org). This is posted by the robot `Nano Snapshots Uploader` and contains checksums for validation.
+To avoid bootstrapping times, a [ledger file](#ledger-file) (`data.ldb`) can be downloaded off-network and added to the data file used by the node. This process is sometimes referred to as a "fast sync". The KIZ Association (TKA) provides a daily ledger file download in the `#ledger` channel of our [Discord server](https://chat.kizunanocoin.com). This is posted by the robot `KIZUNANO COIN Snapshots Uploader` and contains checksums for validation.
 Alternatively, one of [My Nano Ninja](https://mynano.ninja/api) APIs redirects the current ledger file preserved at [Yandex](https://yandex.com/):
 ```bash
 wget -O ledger.7z https://mynano.ninja/api/ledger/download -q --show-progress
@@ -95,7 +95,7 @@ If confirmation data for the ledger is not trusted the [--confirmation_height_cl
 
 ## Updating the node
 
-Occasionally, updating to the [latest node version](/releases/node-releases/#current-release) requires upgrading the existing ledger which can have the following effects:
+Occasionally, updating to the latest node version requires upgrading the existing ledger which can have the following effects:
 
 - Significant downtime, from a few minutes to several hours, during which the node RPC is not accessible and no voting occurs. The upgrade is especially slower if the ledger is not on an SSD.
 - Temporary increased disk space usage - up to 3x the current ledger size in total (e.g. 60GB for a 20GB ledger)
@@ -112,12 +112,12 @@ In order to minimize downtime, consider performing the update in a different mac
 1. If there is not enough free space on Machine A:
 	* Copy [`data.ldb`](#ledger-file) from Machine A to `/home/<user>/Nano_Update/data.ldb` on Machine B.
 	* Start the node again on Machine A, resuming operation.
-1. Download the [latest node version](/releases/node-releases/#current-release) to Machine B. For the purposes of this guide, using a binary is easier.
-1. Run the following command on Machine B (varies based on your operating system): `./nano_node --debug_block_count --data_path /home/<user>/Nano_Update --config node.logging.log_to_cerr=true`
+1. Download the latest node version to Machine B. For the purposes of this guide, using a binary is easier.
+1. Run the following command on Machine B (varies based on your operating system): `./kizunano_node --debug_block_count --data_path /home/<user>/Nano_Update --config node.logging.log_to_cerr=true`
 1. The message *"Upgrade in progress..."* will be displayed if a ledger upgrade is required. Wait until the command finishes and **do not stop the upgrade preemptively**.
 1. Copy `/home/<user>/Nano_Update/data.ldb` from Machine B to a temporary location on Machine A. **do not overwrite data.ldb on Machine A while the node is running**.
 1. **Stop** the node on Machine A.
-1. Replace `/home/<user>/Nano/data.ldb` with the transferred file.
+1. Replace `/home/<user>/Kizunano/data.ldb` with the transferred file.
 1. **Upgrade** to the latest node version on Machine A as you would do normally.
 
 In the event that you are unable to upgrade the ledger on another machine but would still like to minimize downtime, consider [obtaining the ledger from another source](#downloaded-ledger-files) as a last resource.
@@ -216,7 +216,7 @@ RocksDB Limitations:
 
 * Automatic backups not currently supported
 * Database transaction tracker is not supported
-* Cannot execute CLI commands which require writing to the database, such as `nano_node --peer_clear` these must be executed when the node is stopped
+* Cannot execute CLI commands which require writing to the database, such as `kizunano_node --peer_clear` these must be executed when the node is stopped
 
 !!! note "Snapshotting with RocksDB"
 	When backing up using the --snapshot CLI option, it is currently set up to do incremental backups, which reduces the need to copy the whole database. However if the original files are deleted, then the backup directory should also be deleted otherwise there can be inconsistencies.

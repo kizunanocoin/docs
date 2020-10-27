@@ -1,12 +1,12 @@
-title: WebSockets | Nano Documentation
-description: Details for integration into WebSockets for notifications from the Nano node.
+title: WebSockets | KIZUNANO COIN Documentation
+description: Details for integration into WebSockets for notifications from KIZUNANO COIN node.
 
 !!! note ""
     Available in version 19.0+ only. When upgrading from version 18 or earlier, the node performs a confirmation height upgrade. During this process, the WebSocket notifications may include confirmations for old blocks. Services must handle duplicate notifications, as well as missed blocks as WebSockets do not provide guaranteed delivery. Reasons for missed blocks include intermittent network issues and internal containers (in the node or clients) reaching capacity.
 
 --8<-- "multiple-confirmation-notifications.md"
 
-The Nano node offers notification of confirmed blocks over WebSockets. This offers higher throughput over the HTTP callback, and uses a single ingoing connection instead of an outgoing connection for every block.
+KIZUNANO COIN node offers notification of confirmed blocks over WebSockets. This offers higher throughput over the HTTP callback, and uses a single ingoing connection instead of an outgoing connection for every block.
 
 The HTTP callback is still available and both mechanisms can be used at the same time.
 
@@ -34,13 +34,13 @@ enable = true
 
 # WebSocket server listening port.
 # type:uint16
-port = 7078
+port = 3978
 ```
 
-With the above configuration, localhost clients should connect to `ws://[::1]:7078`.
+With the above configuration, localhost clients should connect to `ws://[::1]:3978`.
 
 !!! note "Configuration for use with Docker"
-    Set the WebSocket server bind `address` to `::ffff:0.0.0.0` instead, and configure the container to map port 7078 accordingly. **Review [Managing the Container](../running-a-node/docker-management.md#managing-the-container) to ensure the websocket is not exposed externally.**
+    Set the WebSocket server bind `address` to `::ffff:0.0.0.0` instead, and configure the container to map port 3978 accordingly. **Review [Managing the Container](../running-a-node/docker-management.md#managing-the-container) to ensure the websocket is not exposed externally.**
 
 ## Acknowledgement
 
@@ -189,8 +189,8 @@ Filters for **confirmation** can be used to subscribe only to selected accounts.
   "options": {
     "all_local_accounts": true,
     "accounts": [
-      "nano_16c4ush661bbn2hxc6iqrunwoyqt95in4hmw6uw7tk37yfyi77s7dyxaw8ce",
-      "nano_3dmtrrws3pocycmbqwawk6xs7446qxa36fcncush4s1pejk16ksbmakis32c"
+      "kizn_16c4ush661bbn2hxc6iqrunwoyqt95in4hmw6uw7tk37yfyi77s7dyxaw8ce",
+      "kizn_3dmtrrws3pocycmbqwawk6xs7446qxa36fcncush4s1pejk16ksbmakis32c"
     ]
   }
 }
@@ -275,7 +275,7 @@ Including the election info option results in the following fields being include
   "topic": "confirmation",
   "time": "1564935350664",
   "message": {
-    "account": "nano_1tgkjkq9r96zd3pkr7edj8e4qbu3wr3ps6ettzse8hmoa37nurua7faupjhc",
+    "account": "kizn_1tgkjkq9r96zd3pkr7edj8e4qbu3wr3ps6ettzse8hmoa37nurua7faupjhc",
     "amount": "15621963968634827029081574961",
     "hash": "0E889F83E28152A70E87B92D846CA3D8966F3AEEC65E11B25F7B4E6760C57CA3",
     "confirmation_type": "active_quorum",
@@ -289,12 +289,12 @@ Including the election info option results in the following fields being include
     },
     "block": {
       "type": "state",
-      "account": "nano_1tgkjkq9r96zd3pkr7edj8e4qbu3wr3ps6ettzse8hmoa37nurua7faupjhc",
+      "account": "kizn_1tgkjkq9r96zd3pkr7edj8e4qbu3wr3ps6ettzse8hmoa37nurua7faupjhc",
       "previous": "4E9003ABD469D1F58A70518234016797FA654B494A2627B8583052629A91689E",
-      "representative": "nano_3rw4un6ys57hrb39sy1qx8qy5wukst1iiponztrz9qiz6qqa55kxzx4491or",
+      "representative": "kizn_3rw4un6ys57hrb39sy1qx8qy5wukst1iiponztrz9qiz6qqa55kxzx4491or",
       "balance": "0",
       "link": "3098F4C0D1D8BD889AF078CDFF81E982B8EFA6D6D8FAE954CF0CDC7A256C3F8B",
-      "link_as_account": "nano_1e6rym1f5p7xj4fh1y8fzy1ym1orxymffp9tx7cey58whakprhwdzuk533th",
+      "link_as_account": "kizn_1e6rym1f5p7xj4fh1y8fzy1ym1orxymffp9tx7cey58whakprhwdzuk533th",
       "signature": "D5C332587B1A4DEA35B6F03B0A9BEB45C5BBE582060B0252C313CF411F72478721F8E7DA83A779BA5006D571266F32BDE34C1447247F417F8F12101D3ADAF705",
       "work": "c950fc037d61e372",
       "subtype": "send"
@@ -335,8 +335,8 @@ Used to subscribe only to votes from selected representatives. Once filters are 
   "topic": "vote",
   "options": {
     "representatives": [
-      "nano_16c4ush661bbn2hxc6iqrunwoyqt95in4hmw6uw7tk37yfyi77s7dyxaw8ce",
-      "nano_3dmtrrws3pocycmbqwawk6xs7446qxa36fcncush4s1pejk16ksbmakis32c"
+      "kizn_16c4ush661bbn2hxc6iqrunwoyqt95in4hmw6uw7tk37yfyi77s7dyxaw8ce",
+      "kizn_3dmtrrws3pocycmbqwawk6xs7446qxa36fcncush4s1pejk16ksbmakis32c"
     ]
   }
 }
@@ -370,7 +370,7 @@ By default only `vote` type votes are broadcasted, and the others are filtered. 
   "topic": "vote",
   "time": "1554995525343",
   "message": {
-    "account": "nano_1n5aisgwmq1oibg8c7aerrubboccp3mfcjgm8jaas1fwhxmcndaf4jrt75fy",
+    "account": "kizn_1n5aisgwmq1oibg8c7aerrubboccp3mfcjgm8jaas1fwhxmcndaf4jrt75fy",
     "signature": "1950700796914893705657789944906107642480343124305202910152471520450456881722545967829502369630995363643731706156278026749554294222131169148120786048025353",
     "sequence": "855471574",
     "blocks": [
@@ -562,7 +562,7 @@ No filters are currently available for the `telemetry` topic.
     "node_id": "node_3cczh431wuh5gg64jen6a658xewpx7eiyfqn7f8gpdcfp786s7xdb51kr1rp",
     "signature": "C9429FBC069F15E9AE552FB80500B4BA0F0CF2E25DD6C6D2018FA1D96DC4353A75E4A86872E54E7B2BFF06526719076E792DA3C83F1B2FD40244804EAC324C00",
     "address": "::ffff:139.180.168.194",
-    "port": "7075"
+    "port": "3975"
   }
 }
 ```
@@ -599,12 +599,12 @@ No filters are currently available for the `new_unconfirmed_block` topic.
   "time": "1587109495082",
   "message": {
     "type": "state",
-    "account": "nano_1unw379kgu1iub1caswn5khfk4b6tzinku8ww7uds9z7nwubj3dgt6yzjpiw",
+    "account": "kizn_1unw379kgu1iub1caswn5khfk4b6tzinku8ww7uds9z7nwubj3dgt6yzjpiw",
     "previous": "A01B96AFE86DC82FECD13F8C3A4F1AC779DCDAF60166F94F1A2CD3987F4609F0",
-    "representative": "nano_1stofnrxuz3cai7ze75o174bpm7scwj9jn3nxsn8ntzg784jf1gzn1jjdkou",
+    "representative": "kizn_1stofnrxuz3cai7ze75o174bpm7scwj9jn3nxsn8ntzg784jf1gzn1jjdkou",
     "balance": "2345399869764044123018481994",
     "link": "E0049F6D5D5661A714D8928D287285A0105B07720661F8C8B1FC8EE5B15FC067",
-    "link_as_account": "nano_3r16mxpotom3nwcfj6nf73sada1ide5q63m3z56d5z6gwprozi59ocyuoxc1",
+    "link_as_account": "kizn_3r16mxpotom3nwcfj6nf73sada1ide5q63m3z56d5z6gwprozi59ocyuoxc1",
     "signature": "7BDD77BE14552263F9AF5130229A3BBB9038EE4B9C29E66D3D58280EF43B7FAF2DBC7070BD9CA39C844B7068E3AF40B04CE1D5CEEEA142C8FE20EE091A3C320E",
     "work": "8ebdd4aa0bf1263e",
     "subtype": "receive"

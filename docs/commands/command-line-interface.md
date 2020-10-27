@@ -36,9 +36,9 @@ Sets the confirmation heights of all accounts to 0. Optional `--account` to only
 ### --daemon
 Start node daemon. Since version 19.0, network and path will be output, similar to:
 ```
-./nano_node --daemon --network test
+./kizunano_node --daemon --network test
 Network: test, version: 19.0
-Path: /home/USER/NanoTest
+Path: /home/USER/KizunanoTest
 ```
 
 ### --data_path=`<path>` 
@@ -138,7 +138,7 @@ Set `<account>` as default representative for `<wallet>`
 
 
 ## Launch options
-When initially starting the nano_node or nano_wallet as a service the following launch options are available.
+When initially starting the kizunano_node or kizunano_wallet as a service the following launch options are available.
 
 !!! note "Intended for developer use"
 	These options are only for developer use so please understand the impacts before use.
@@ -235,7 +235,7 @@ List representatives and weights
 
 ### --debug_generate_crash_report
 _version 21.0+_  
-After a node crash on linux, this command consumes the dump files generated from that crash and produces a "nano_node_crash_report.txt" file. Requires `addr2line` to be installed on the system. See the [troubleshooting guide](/running-a-node/troubleshooting/#what-to-do-if-the-node-crashes-linux) for more information.
+After a node crash on linux, this command consumes the dump files generated from that crash and produces a "kizunano_node_crash_report.txt" file. Requires `addr2line` to be installed on the system. See the [troubleshooting guide](/running-a-node/troubleshooting/#what-to-do-if-the-node-crashes-linux) for more information.
 
 ### --debug_opencl
 Profile OpenCL work generation for (optional) `--device=<device>` on `--device=<platform>` using `--threads=<threads>` count. To retrieve available platforms & devices run [--diagnostics](#-diagnostics). 
@@ -273,7 +273,7 @@ Profile frontiers confirmation speed
 ### --debug_rpc
 _version 18.0+_  
 Allows running RPC commands without enabling the RPC server. Not recommended for daily usage.  
-Example: `echo '{"action": "block_count"}' | nano_node --debug_rpc`
+Example: `echo '{"action": "block_count"}' | kizunano_node --debug_rpc`
 
 ### --debug_stacktrace
 _version 20.0+_  

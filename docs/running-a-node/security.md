@@ -1,13 +1,11 @@
-title: Node Security | Nano Documentation
-description: Information about how to properly secure your Nano node when getting setup on the network.
+title: Node Security | KIZUNANO COIN Documentation
+description: Information about how to properly secure your KIZUNANO COIN node when getting setup on the network.
 
 # Node Security
 
-There are [many reasons to run a Nano node](/running-a-node/overview/#why-run-a-node) on the network. Nodes are the participants that help vote on transaction validity, assist other nodes with bootstrapping blocks in the ledger and providing an access point to all accounts. But those who choose to run them should be making a long-term commitment to [run them on proper hardware](/running-a-node/node-setup/#hardware-recommendations), keep them updated with the [latest release](/releases/node-releases/) and, most importantly, keep their setup as secure as possible.
+There are [many reasons to run a KIZUNANO COIN node](/running-a-node/overview/#why-run-a-node) on the network. Nodes are the participants that help vote on transaction validity, assist other nodes with bootstrapping blocks in the ledger and providing an access point to all accounts. But those who choose to run them should be making a long-term commitment to [run them on proper hardware](/running-a-node/node-setup/#hardware-recommendations), keep them updated with the latest release and, most importantly, keep their setup as secure as possible.
 
---8<-- "join-technical-mailing-list.md"
-
-The details below are guidelines on things to watch out for when setting up and securing your Nano node. As the node can be run on many different operating systems, some of these guidelines have been kept more general. There are plenty of resources online for learning how to apply these guidelines to more specific setups and additional details will be included in the docs here as they are appropriate.
+The details below are guidelines on things to watch out for when setting up and securing your KIZUNANO COIN node. As the node can be run on many different operating systems, some of these guidelines have been kept more general. There are plenty of resources online for learning how to apply these guidelines to more specific setups and additional details will be included in the docs here as they are appropriate.
 
 ## Node configuration
 
@@ -22,10 +20,10 @@ By turning `enable_control` on, anyone with access to your RPC can run these pot
 
 ### Port configuration
 
-Opening default port `7075` on UDP and TCP is required for the node to participate on the main network and this should be done unrestricted. The default port for RPC access is `7076` and should only be available to those you wish to have control of the node. Verifying the configuration in `config-rpc.toml` file for `address` and `enable_control` should be done on all nodes, alonside other access verifications outlined below.
+Opening default port `3975` on UDP and TCP is required for the node to participate on the main network and this should be done unrestricted. The default port for RPC access is `3976` and should only be available to those you wish to have control of the node. Verifying the configuration in `config-rpc.toml` file for `address` and `enable_control` should be done on all nodes, alonside other access verifications outlined below.
 
 !!! danger "Opening RPC port externally and enabling control is potentially dangerous"
-	As mentioned above, enabling control allows anyone with RPC access to make potentially dangerous calls to your node. If turning on `enable_control`, you must carefully review any access granted to the RPC port (default `7076`) to ensure it is as secure as possible.
+	As mentioned above, enabling control allows anyone with RPC access to make potentially dangerous calls to your node. If turning on `enable_control`, you must carefully review any access granted to the RPC port (default `3976`) to ensure it is as secure as possible.
 
 ## Firewalls
 

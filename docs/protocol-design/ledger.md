@@ -1,4 +1,4 @@
-Title: Nano Protocol Design - Ledger
+Title: KIZUNANO COIN Protocol Design - Ledger
 
 # Protocol Design - Ledger
 
@@ -20,7 +20,7 @@ Title: Nano Protocol Design - Ledger
 
 Existing whitepaper sections related to this page:
 
-* [Nano Components](/whitepaper/english/#raiblocks-components)
+* [KIZUNANO COIN Components](/whitepaper/english/#raiblocks-components)
 
 Other existing content related to this page:
 

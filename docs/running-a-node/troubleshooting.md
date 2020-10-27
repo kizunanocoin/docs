@@ -6,9 +6,9 @@ The default location of standard node log files for various systems:
 
 | **OS**  | **Location** |
 |---------|--------------|
-| Windows | `:::bash C:\Users\<user>\AppData\Local\Nano\log` -or- `:::bash %LOCALAPPDATA%\Nano\log`  |
-| macOS   | `:::bash /Users/<user>/Library/Nano/log ` |
-| Linux   | `:::bash /home/<user>/Nano/log ` |
+| Windows | `:::bash C:\Users\<user>\AppData\Local\Kizunano\log` -or- `:::bash %LOCALAPPDATA%\Kizunano\log`  |
+| macOS   | `:::bash /Users/<user>/Library/Kizunano/log ` |
+| Linux   | `:::bash /home/<user>/Kizunano/log ` |
 
 !!! tip ""
     To get a static file name for the currently active log file, see the [stable_log_filename configuration option](configuration.md#loggingstable_log_filename)
@@ -22,15 +22,15 @@ The default location of standard node log files for various systems:
 
 If the node crashes, the most commonly seen message is "Segmentation fault (core dumped)". When using docker, this message will only show up in the docker logs. In any case, this is often not enough to go on in terms of figuring out what went wrong. The next steps detail what you should do to provide us with as much information as possible about the problem.
 
-When you are done gathering all information, please [create a new Github issue](https://github.com/nanocurrency/nano-node/issues/new), or [reach us on Discord](https://chat.nano.org) in the *#support* channel, detailing your issue as much as possible.
+When you are done gathering all information, please [create a new Github issue](https://github.com/kizunanocoin/node/issues/new), or [reach us on Discord](https://chat.kizunanocoin.com) in the *#support* channel, detailing your issue as much as possible.
 
 
 !!! note "Getting the latest node log"
     The following command will order the log files such that the first one in the output is the most recent. If you restarted the node since the crash, then the relevant log file is not the latest one. Please be careful to give us the relevant log file.
 
     ```bash
-    # Nano -> NanoBeta if debugging a beta node
-    ls -dlt ~/Nano/log/* | head
+    # Kizunano -> KizunanoBeta if debugging a beta node
+    ls -dlt ~/Kizunano/log/* | head
     ```
 
     Please provide the complete log file.
@@ -47,19 +47,19 @@ Please follow the steps below for the corresponding node version you are using. 
     `dnf install binutils`
 
 !!! example "(Optional) Step 2: Save crash dump files"
-    The next step will clean up the dump files generated during the crash, if you wish to keep these then save `nano_node_backtrace.dump`, and all `nano_node_crash_load_address_dump_*.txt` files.
+    The next step will clean up the dump files generated during the crash, if you wish to keep these then save `kizunano_node_backtrace.dump`, and all `kizunano_node_crash_load_address_dump_*.txt` files.
 
 !!! example "Step 3: Generate crash report"
     Run:
-    `./nano_node --debug_generate_crash_report`
+    `./kizunano_node --debug_generate_crash_report`
 
-    This will generate a text file `nano_node_crash_report.txt` please send us the contents of this file.
+    This will generate a text file `kizunano_node_crash_report.txt` please send us the contents of this file.
 
 #### _v20_ nodes
 
 !!! example "Step 1: Getting dmesg information"
     Depending on the error, it is possible you do not find any useful information in this step, in which case please move on to Step 3.
-    Run the following command and look for `nano_node` at the end. If you see a relevant message, gather all messages with a similar timestamp - the number within brackets on the left.
+    Run the following command and look for `kizunano_node` at the end. If you see a relevant message, gather all messages with a similar timestamp - the number within brackets on the left.
 
     ```bash
     dmesg
@@ -70,7 +70,7 @@ Please follow the steps below for the corresponding node version you are using. 
     [    6.336071] IPv6: ADDRCONF(NETDEV_CHANGE): wlp2s0: link becomes ready
     [    6.375123] wlp2s0: Limiting TX power to 23 (23 - 0) dBm as advertised by **:**:**:**:**:**
     [ 6141.711993] show_signal_msg: 23 callbacks suppressed
-    [ 6141.711995] I/O[14487]: segfault at 1 ip 000055c69d3a1634 sp 00007f6e9332df10 error 6 in nano_node[55c69d25f000+70b000]
+    [ 6141.711995] I/O[14487]: segfault at 1 ip 000055c69d3a1634 sp 00007f6e9332df10 error 6 in kizunano_node[55c69d25f000+70b000]
     [ 6141.711999] Code: 24 70 48 83 c5 10 48 89 c3 48 39 ef 74 b6 e8 e3 b8 39 00 eb af 90 41 57 41 56 41 55 41 54 49 89 fc 55 53 48 81 ec a8 00 00 00 <c6> 04 25 01 00 00 00 31 64 48 8b 04 25 28 00 00 00 48 89 84 24 98
     ```
 
@@ -86,7 +86,7 @@ Please follow the steps below for the corresponding node version you are using. 
     Example output:
     ```
     Aug 15 11:56:07 ubuntu-server kernel: [6141.711993] show_signal_msg: 23 callbacks suppressed
-    Aug 15 11:56:07 ubuntu-server kernel: [6141.711995] I/O[25975]: segfault at 1 ip 000055b2960e2d24 sp 00007fcff50f6fc0 error 6 in nano_node[55b295f9b000+6d8000]
+    Aug 15 11:56:07 ubuntu-server kernel: [6141.711995] I/O[25975]: segfault at 1 ip 000055b2960e2d24 sp 00007fcff50f6fc0 error 6 in kizunano_node[55b295f9b000+6d8000]
     Aug 15 11:56:07 ubuntu-server kernel: [6141.711999] Code: 24 70 48 83 c5 10 48 89 c3 48 39 ef 74 b6 e8 e3 b8 39 00 eb af 90 41 57 41 56 41 55 41 54 49 89 fc 55 53 48 81 ec a8 00 00 00 <c6> 04 25 01 00 00 00 31 64 48 8b 04 25 28 00 00 00 48 89 84 24 98
     ```
 
@@ -97,21 +97,21 @@ Please follow the steps below for the corresponding node version you are using. 
 
     **Not using docker**:
     ```bash
-    ./nano_node --debug_output_last_backtrace_dump > nano_node_backtrace_output.txt
+    ./kizunano_node --debug_output_last_backtrace_dump > kizunano_node_backtrace_output.txt
     ```
 
     **Using docker**:
     ```bash
-    mkdir -p /tmp/nano_node_crash && cd $_
-    docker exec ${NANO_NAME} nano_node --debug_output_last_backtrace_dump > nano_node_backtrace_output.txt
-    docker exec ${NANO_NAME} sh -c 'mkdir -p crash_files; mv nano_node_crash*.txt crash_files/'
+    mkdir -p /tmp/kizunano_node_crash && cd $_
+    docker exec ${NANO_NAME} kizunano_node --debug_output_last_backtrace_dump > kizunano_node_backtrace_output.txt
+    docker exec ${NANO_NAME} sh -c 'mkdir -p crash_files; mv kizunano_node_crash*.txt crash_files/'
     docker cp ${NANO_NAME}:/crash_files/ . && mv crash_files/* .
     ```
 
 !!! example "Step 4: Producing the archive file"
     See the output of this command for the name of the file you should include in your report.
     ```bash
-    FILE="nano_node_crash_$(date +"%Y-%m-%d_%H-%M-%S.tar.gz")" && tar czf $FILE --exclude=*.tar.gz nano_node_* && echo "Created archive $FILE"
+    FILE="kizunano_node_crash_$(date +"%Y-%m-%d_%H-%M-%S.tar.gz")" && tar czf $FILE --exclude=*.tar.gz kizunano_node_* && echo "Created archive $FILE"
     ```
 
 ---

@@ -1,8 +1,8 @@
 env:
   global:
-    - GIT_NAME: "'Nano Development'"
-    - GIT_EMAIL: development@nano.org
-    - GH_REF: git@github.com:nanocurrency/nano-docs.git
+    - GIT_NAME: "'kizunanocoin'"
+    - GIT_EMAIL: kizunanocoin@gmail.com
+    - GH_REF: git@github.com:kizunanocoin/docs.git
 language: python
 python:
   - "3.5"
@@ -21,8 +21,8 @@ script:
       chmod 600 deploy-key
       eval `ssh-agent -s`
       ssh-add deploy-key
-      git config user.name "Nano Development"
-      git config user.email "development@nano.org"
+      git config user.name "kizunanocoin"
+      git config user.email "kizunanocoin@gmail.com"
       git remote add gh-token "${GH_REF}"
       git fetch gh-token
       git fetch gh-token gh-pages:gh-pages

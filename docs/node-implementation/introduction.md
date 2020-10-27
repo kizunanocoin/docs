@@ -1,4 +1,4 @@
-Title: Nano Node Implementation - Introduction
+Title: KIZUNANO COIN Node Implementation - Introduction
 
 # Node Implementation - Introduction
 
@@ -34,7 +34,7 @@ Methods and mechanisms built into the current node software that aren't required
 | [Database](database.md) | Storage and cementing mechanisms, backend database options | 
 | [Voting](voting.md) | Vote handling and voting weight management | 
 | [Work](work.md) | Kernel designs, prioritization processes and rework mechanisms | 
-| [Contributing](/node-implementation/contributing/) | How to contribute to the Nano protocol directly | 
+| [Contributing](/node-implementation/contributing/) | How to contribute to KIZUNANO COIN protocol directly | 
 
 ---
 

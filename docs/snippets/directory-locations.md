@@ -1,5 +1,5 @@
 | **OS**  | **Location** |
 |---------|--------------|
-| Windows | `:::bash C:\Users\<user>\AppData\Local\Nano\` |
-| macOS   | `:::bash /Users/<user>/Library/Nano/ ` |
-| Linux   | `:::bash /home/<user>/Nano/ ` |
+| Windows | `:::bash C:\Users\<user>\AppData\Local\Kizunano\` |
+| macOS   | `:::bash /Users/<user>/Library/Kizunano/ ` |
+| Linux   | `:::bash /home/<user>/Kizunano/ ` |

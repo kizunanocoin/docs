@@ -1,4 +1,4 @@
-Title: Nano Protocol Design - Resource Usage
+Title: KIZUNANO COIN Protocol Design - Resource Usage
 
 # Protocol Design - Resource Usage
 
