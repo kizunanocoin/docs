@@ -47,7 +47,7 @@ Services with heavy RPC calls and work generation can benefit from ensuring dedi
 
 1. Setup a machine separate from the node with GPU attached
 1. Install the [KIZUNANO COIN Work Server](https://github.com/nanocurrency/nano-work-server/blob/master/README.md#installation)
-1. Setup a service to start and monitor the work server process using the GPU option `--gpu <PLATFORM:DEVICE>` and run `nano-work-server --help` for additional options and details
+1. Setup a service to start and monitor the work server process using the GPU option `--gpu <PLATFORM:DEVICE>` and run `kizunano-work-server --help` for additional options and details
 1. Configure the machine running the node to allow traffic over TCP from the work generation machine's IP address
 1. Add the work machine IP address as a [work peer](#nodework_peers) in the node's `config-node.toml` file
 
@@ -61,7 +61,7 @@ Services with heavy RPC calls and work generation can benefit from ensuring dedi
 Services where RPC usage is lighter but regular work generation is needed could move work generation to the same machine if a GPU is used:
 
 1. Install the [KIZUNANO COIN Work Server](https://github.com/nanocurrency/nano-work-server/blob/master/README.md#installation) on the same machine as the node
-1. Setup a service to start and monitor the work server process with options for using the GPU - `--gpu <PLATFORM:DEVICE:THREADS>` is required, run `nano-work-server --help` for additional options and details
+1. Setup a service to start and monitor the work server process with options for using the GPU - `--gpu <PLATFORM:DEVICE:THREADS>` is required, run `kizunano-work-server --help` for additional options and details
 1. Configure the node to prevent local CPU work generation by setting [`node.work_threads`](#nodework_threads) = `0`
 
 !!! info "Node work generation option"

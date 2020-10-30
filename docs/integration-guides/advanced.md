@@ -15,7 +15,7 @@ This guide extends the concepts covered in [External Private Key Management](/in
 !!! note
 	Operations done on the hot, online, insecure computer will be prefaced with `(HOT)`. Operations done on the cold, offline, secure computer will be prefaced with `(COLD)`.
 	
-	Both the hot and cold computers need to have the nano\_node software installed. The hot nano\_node needs to be synced with the network; the cold nano\_node by definition should not be synced as it **never connects to the internet**.
+	Both the hot and cold computers need to have the kizunano_node software installed. The hot kizunano_node needs to be synced with the network; the cold kizunano_node by definition should not be synced as it **never connects to the internet**.
 
 ---
 

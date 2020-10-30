@@ -9,7 +9,7 @@ theme:
     text: 'Noto Sans'
     code: 'Roboto Mono'
   icon: 
-    logo: 'nano'
+    logo: 'kizunanocoin'
     repo: 'fontawesome/brands/github'
   favicon: 'images/favicon.png'
   custom_dir: 'theme'

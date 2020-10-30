@@ -52,14 +52,14 @@ kizn_1pu7p5n3ghq1i1p4rhmek41f5add1uh34xpb94nkbxe8g4a6x1p69emk8y1d
 
 ## External Management
 
-For larger, more robust systems, external private key management is recommended. In this setup, the node operator generates and stores private keys in an external database and only queries the nano\_node to:
+For larger, more robust systems, external private key management is recommended. In this setup, the node operator generates and stores private keys in an external database and only queries the kizunano_node to:
 
 1. Find pending blocks for an account
 2. Sign transactions given a private key. More advanced systems may choose to implement signing themselves.
 3. Broadcast the signed transaction to the network.
 
 !!! note
-    [WALLET\_IDs](/integration-guides/the-basics/#wallet-id) are not used for External Private Key Management since private keys are not stored in the nano\_node. Much of this section builds off of the [Blocks Specifications](/integration-guides/the-basics/#blocks-specifications) documentation.
+    [WALLET\_IDs](/integration-guides/the-basics/#wallet-id) are not used for External Private Key Management since private keys are not stored in the kizunano_node. Much of this section builds off of the [Blocks Specifications](/integration-guides/the-basics/#blocks-specifications) documentation.
 
 ---
 ### External accounting systems
@@ -143,7 +143,7 @@ Using external keys, transactions are generated in two steps: creation and broad
 #### Send Transaction
 
 !!! example "Step 1: Get Account Info"
-    To send funds to an account, first call the [`account_info`](/commands/rpc-protocol#account_info) RPC command to gather necessary account information to craft your transaction. Setting `"representative": "true"` makes the nano\_node also return the account's representative address, a necessary piece of data for creating a transaction.
+    To send funds to an account, first call the [`account_info`](/commands/rpc-protocol#account_info) RPC command to gather necessary account information to craft your transaction. Setting `"representative": "true"` makes the kizunano_node also return the account's representative address, a necessary piece of data for creating a transaction.
     
 ##### Request Example
 
@@ -222,8 +222,8 @@ curl -d '{
 
 !!! info "Additional details"
     * The option `json_block`, available since V19.0, makes the RPC call return a non-stringified version of the block, which is easier to parse and always recommended.
-    * [`block_create`](/commands/rpc-protocol#block_create) RPC commands generally take longer than other RPC commands because the nano\_node has to generate the [Proof-of-Work](/integration-guides/the-basics/#proof-of-work) for the transaction. The response block data is already properly formatted to include in the [`process`](/commands/rpc-protocol#process) RPC command.
-    * The nano\_node creating and signing this transaction has no concept of what the transaction amount is, nor network state; all the nano\_node knows is that it is creating a block whose previous block on the account chain has hash `92BA74A7D6DC7557F3EDA95ADC6341D51AC777A0A6FF0688A5C492AB2B2CB40D` results in the account having a balance of `3618869000000000000000000000000`.
+    * [`block_create`](/commands/rpc-protocol#block_create) RPC commands generally take longer than other RPC commands because the kizunano_node has to generate the [Proof-of-Work](/integration-guides/the-basics/#proof-of-work) for the transaction. The response block data is already properly formatted to include in the [`process`](/commands/rpc-protocol#process) RPC command.
+    * The kizunano_node creating and signing this transaction has no concept of what the transaction amount is, nor network state; all the kizunano_node knows is that it is creating a block whose previous block on the account chain has hash `92BA74A7D6DC7557F3EDA95ADC6341D51AC777A0A6FF0688A5C492AB2B2CB40D` results in the account having a balance of `3618869000000000000000000000000`.
     * If the account's balance at block hash `92BA74A7D6DC7557F3EDA95ADC6341D51AC777A0A6FF0688A5C492AB2B2CB40D` was actually `5618869000000000000000000000000`, then 2 $nano$ would have been sent to `kizn_1q3hqecaw15cjt7thbtxu3pbzr1eihtzzpzxguoc37bj1wc5ffoh7w74gi6p`.
 
 !!! question "What if I receive funds on my account and then broadcast the above crafted send? Would this result in me sending excess funds to the recipient?"
@@ -244,7 +244,7 @@ curl -d '{
     For this reason, **only populate transaction data source from a single [`account_info`](/commands/rpc-protocol#account_info) RPC call**.
 
 !!! example "Step 3: Broadcast the transaction"
-    As a result of the command above, the nano\_node will return a signed, but not yet broadcasted transaction. Broadcasting of the signed transaction is covered in the [Broadcasting Transactions](#broadcasting-transactions) section.
+    As a result of the command above, the kizunano_node will return a signed, but not yet broadcasted transaction. Broadcasting of the signed transaction is covered in the [Broadcasting Transactions](#broadcasting-transactions) section.
 
 ---
 
@@ -339,7 +339,7 @@ curl -d '{
     * Final balance becomes 11618869000000000000000000000000 $raw$
 
 !!! example "Step 3: Broadcast the transaction"
-    As a result of the command above, the nano\_node will return a signed, but not yet broadcasted transaction. Broadcasting of the signed transaction is covered in the [Broadcasting Transactions](#broadcasting-transactions) section.
+    As a result of the command above, the kizunano_node will return a signed, but not yet broadcasted transaction. Broadcasting of the signed transaction is covered in the [Broadcasting Transactions](#broadcasting-transactions) section.
 
 ---
 
@@ -425,7 +425,7 @@ curl -d '{
 ```
 
 !!! example "Step 3: Broadcast the transaction"
-    As a result of the command above, the nano\_node will return a signed, but not yet broadcasted transaction. Broadcasting of the signed transaction is covered in the [Broadcasting Transactions](#broadcasting-transactions) section.
+    As a result of the command above, the kizunano_node will return a signed, but not yet broadcasted transaction. Broadcasting of the signed transaction is covered in the [Broadcasting Transactions](#broadcasting-transactions) section.
 
 ---
 
@@ -497,7 +497,7 @@ curl -d '{
 
 ## Internal Management
 
-The nano\_node software has a built-in private-key manager that is suitable for smaller operations (<1000 accounts). [External Key Management](/integration-guides/key-management/#external-management) allows more powerful and robust systems at the cost of additional complexity. External Key Management is recommended for larger operations.
+The kizunano_node software has a built-in private-key manager that is suitable for smaller operations (<1000 accounts). [External Key Management](/integration-guides/key-management/#external-management) allows more powerful and robust systems at the cost of additional complexity. External Key Management is recommended for larger operations.
 
 ### Creating a Wallet
 
@@ -519,7 +519,7 @@ curl -d '{
 }
 ```
 
-The nano\_node responds with the WALLET\_ID. If you lose your WALLET\_ID, it can only be recovered via a CLI command. To reiterate, the **WALLET_ID is not a seed**. The seed can be extracted for backup in [Backing Up Seed](#backing-up-seed). Many of the RPC commands in this guide require the WALLET\_ID.
+The kizunano_node responds with the WALLET\_ID. If you lose your WALLET\_ID, it can only be recovered via a CLI command. To reiterate, the **WALLET_ID is not a seed**. The seed can be extracted for backup in [Backing Up Seed](#backing-up-seed). Many of the RPC commands in this guide require the WALLET\_ID.
 
 ---
 
@@ -541,7 +541,7 @@ kizn_16odwi933gpzmkgdcy9tt5zef5ka3jcfubc97fwypsokg7sji4mb9n6qtbme
 Wallet_ID: DB0711484E35A4C75230D898853A86BFAFE9F87FCE99C83A4C2668C39607DD4B
 ```
 
-In this example, the nano\_node's internal private-key management system contains two wallets, each with a different 256-bit seed. The first wallet has a single account and the second wallet has zero accounts. Account creation will be covered later.
+In this example, the kizunano_node's internal private-key management system contains two wallets, each with a different 256-bit seed. The first wallet has a single account and the second wallet has zero accounts. Account creation will be covered later.
 
 ---
 
@@ -564,7 +564,7 @@ Prv: 1F6FEB5D1E05C10B904E1112F430C3FA93ACC7067206B63AD155199501794E3E
 ```
 
 !!! info
-    The nano\_node responds with three pieces of information:
+    The kizunano_node responds with three pieces of information:
     
     1. The seed of the wallet (back this up).
     1. The pairing public address
@@ -626,7 +626,7 @@ curl -d '{
 
 ##### Error Response
 
-Response if the wallet_id isn't found in nano\_node:
+Response if the wallet_id isn't found in kizunano_node:
 ```json
 {
   "error": "Wallet not found"
@@ -718,14 +718,14 @@ curl -d '{
 
 ### Receiving Funds
 
-As long as the nano\_node is synced and unlocked (nano\_node locking is not covered in this guide), nano\_node automatically creates and signs receive transactions for all accounts in the wallet's internal private-key management system.
+As long as the kizunano_node is synced and unlocked (kizunano_node locking is not covered in this guide), kizunano_node automatically creates and signs receive transactions for all accounts in the wallet's internal private-key management system.
 
 !!! tip
     In the event that a receive is not automatically generated, it can be manually generated using the [`receive`](/commands/rpc-protocol#receive) RPC command.
 
 #### Semi-Manual Receiving Funds
 
-If the nano\_node does not automatically sign in a pending transaction, transactions can be manually signed in. The easiest way is to explicitly command the nano\_node to check all of the accounts in all of its wallets for pending blocks.
+If the kizunano_node does not automatically sign in a pending transaction, transactions can be manually signed in. The easiest way is to explicitly command the kizunano_node to check all of the accounts in all of its wallets for pending blocks.
 
 ##### Request Example
 
@@ -744,7 +744,7 @@ curl -d '{
 ```
 
 !!! note
-    As the number of accounts in a nano\_node grows, this command becomes increasingly computationally expensive.
+    As the number of accounts in a kizunano_node grows, this command becomes increasingly computationally expensive.
 
 ---
 
@@ -778,10 +778,10 @@ curl -d '{
 !!! warning "Important"
     The `"id"` field is a safety mechanism that prevents issuing a transaction multiple times by repeating the RPC command.
 
-    * If a transaction is successful, any subsequent [`send`](/commands/rpc-protocol#send) RPC commands with the same identifier will be ignored by the nano\_node.
+    * If a transaction is successful, any subsequent [`send`](/commands/rpc-protocol#send) RPC commands with the same identifier will be ignored by the kizunano_node.
     * If the request times out, then the send may or may not have gone through.
     * Most exchange "double withdraw" issues are caused by naive error-handling routines which re-issue the send request without the `"id"` parameter.
-    * The `"id"` field is local to your nano\_node instance and does not offer protection when sent to different instances of nano\_node that manage the same seed.
+    * The `"id"` field is local to your kizunano_node instance and does not offer protection when sent to different instances of kizunano_node that manage the same seed.
     * As previously mentioned, having a seed loaded in multiple online kizukizn_node is strongly discouraged.
     * If managing more than 1000 accounts, building a separate system for managing keys and accounts externally is recommended
 
@@ -810,7 +810,7 @@ curl -d '{
 }
 ```
 
-On success, the nano\_node returns the hash of the transaction's block.
+On success, the kizunano_node returns the hash of the transaction's block.
 
 ---
 
@@ -843,4 +843,4 @@ curl -d '{
   ]
 }
 ```
-On success, the nano\_node returns the hashes of all republished blocks.
+On success, the kizunano_node returns the hashes of all republished blocks.

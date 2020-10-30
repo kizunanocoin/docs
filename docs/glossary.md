@@ -31,7 +31,7 @@ The transmission rate of [unconfirmed](#confirmation) blocks (transactions) on t
 A sub-network established between peers via Transmission Control Protocol (TCP) for managing bulk transmission of blocks. This is used on initial bootstrapping of peers and when out-of-sync peers attempt to fill large gaps in their ledgers. This is available within all KIZUNANO COIN networks (main, beta and test networks).
 
 #### bootstrapping
-During initial sync, the nano\_node requests old transactions to independently verify and populate its local ledger database. Bootstrapping will also occur when the nano\_node becomes out of sync with the network.
+During initial sync, the kizunano_node requests old transactions to independently verify and populate its local ledger database. Bootstrapping will also occur when the kizunano_node becomes out of sync with the network.
 
 #### circulating supply
 20,000,000,000 KIZN. This is the supply that resulted after burns were made from the [genesis](#genesis) account, landing account and faucet account, following original distribution. Actual circulating supply is lower due to lost keys and sends to burn accounts. The original supply minus any amounts sent to the burn account can be found using the [available_supply](/commands/rpc-protocol/#available_supply) RPC.
@@ -125,14 +125,14 @@ Each node configured with a [Representative](#representative) votes on every blo
 The amount of weight delegated to a [Representative](#representative).
 
 #### wallet
-A wallet is an organizational object in a nano\_node that holds a single seed from which multiple accounts are deterministically derived via a 32-bit unsigned integer index starting at 0. Private keys are derived from the seed and index as follows: (`||` means concatenation; `blake2b` is a [highly optimized cryptographic hash function](/protocol-design/signing-hashing-and-key-derivation/#hashing-algorithm-blake2))
+A wallet is an organizational object in a kizunano_node that holds a single seed from which multiple accounts are deterministically derived via a 32-bit unsigned integer index starting at 0. Private keys are derived from the seed and index as follows: (`||` means concatenation; `blake2b` is a [highly optimized cryptographic hash function](/protocol-design/signing-hashing-and-key-derivation/#hashing-algorithm-blake2))
 
 $$
 k_{private} = blake2b(\text{seed} || \text{index})
 $$
 
 #### WALLET_ID
-A 256-bit random value name/identifier for a specific wallet in the local nano\_node database. The WALLET\_ID **is not** stored anywhere in the network and is only used in the local nano\_node. Even though a WALLET\_ID looks identical to a seed, do not confuse the WALLET\_ID with a seed; funds cannot be restored with a WALLET\_ID. Do not backup the WALLET\_ID as a means to backup funds.
+A 256-bit random value name/identifier for a specific wallet in the local kizunano_node database. The WALLET\_ID **is not** stored anywhere in the network and is only used in the local kizunano_node. Even though a WALLET\_ID looks identical to a seed, do not confuse the WALLET\_ID with a seed; funds cannot be restored with a WALLET\_ID. Do not backup the WALLET\_ID as a means to backup funds.
 
 #### work peers
 Node peers which are configured to generate work for transactions at the originating nodes request.

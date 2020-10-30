@@ -25,12 +25,12 @@ While you can run a KIZUNANO COIN node by downloading a binary or building from 
 
 ## Network Ports
 
-The nano\_node will use two configurable ports throughout its lifecycle. The default values suggested by the [network details](configuration.md#network-details) are below:
+The kizunano_node will use two configurable ports throughout its lifecycle. The default values suggested by the [network details](configuration.md#network-details) are below:
 
 --8<-- "network-details-simple.md"
 
 !!! note ""
-	By default nano\_node will attempt to use UPnP. [Troubleshooting information can be found here](troubleshooting.md#troubleshooting-upnp)
+	By default kizunano_node will attempt to use UPnP. [Troubleshooting information can be found here](troubleshooting.md#troubleshooting-upnp)
 
 ---
 

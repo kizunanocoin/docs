@@ -58,7 +58,7 @@ Communication is the key to working together efficiently. A good way to get in t
 !!! warning "Security Vulnerability Disclosure"
 	**Do NOT discuss potential security vulnerabilities on the issue tracker, public forums or open discussion channels**
 
-	If you discover a bug you believe to pose a security risk to KIZUNANO COIN network, please contact bugs@nano.org with a proof of concept with full details of the bug including:
+	If you discover a bug you believe to pose a security risk to KIZUNANO COIN network, please contact info@newkizunacoin.com with a proof of concept with full details of the bug including:
 	
 	* Repository of the bug
 	* High-level summary

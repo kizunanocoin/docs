@@ -20,13 +20,13 @@ The system is akin to writing (send) and cashing (receive) a Cashier's Check.  T
 
 ## Representatives
 
-KIZUNANO COIN Network achieves consensus using the unique [Open Representative Voting (ORV)](/what-is-nano/overview/#representatives-and-voting) model. In this setup, representatives (accounts where nano\_node with the private keys are running 24/7) vote on transactions.
+KIZUNANO COIN Network achieves consensus using the unique [Open Representative Voting (ORV)](/what-is-nano/overview/#representatives-and-voting) model. In this setup, representatives (accounts where kizunano_node with the private keys are running 24/7) vote on transactions.
 
 !!! info
     Below are some helpful things to remember about KIZUNANO COIN's representatives and consensus:
 
     * A representative's voting power is directly proportional to the amount of funds delegated to that account by other users of the protocol.
-    * An account's representative has no bearing on its transactions or nano\_node operation.
+    * An account's representative has no bearing on its transactions or kizunano_node operation.
     * Choosing a representative with good uptime that is also a unique entity (to prevent sybil attacks) helps maintain high KIZUNANO COIN network security.
     * If an account's representative goes offline, the account's funds are no longer used to help secure the network; however, the account is unaffected.
     * Anyone that runs a full-time node may be a representative and be delegated voting weight from other users of the protocol.
@@ -99,7 +99,7 @@ So for address `kizn_1anrzcuwe64rwxzcco8dkhpyxpi8kd7zsjc1oeimpc3ppca4mrjtwnqposr
 |         |                                                        |            |
 | `kizn_` | `1anrzcuwe64rwxzcco8dkhpyxpi8kd7zsjc1oeimpc3ppca4mrjt` | `wnqposrs` |
 
-For basic address validation, the following regular expression can be used: `^(nano|xrb)_[13]{1}[13456789abcdefghijkmnopqrstuwxyz]{59}$`. Validation of the checksum is also recommended, depending on the integration.
+For basic address validation, the following regular expression can be used: `^(kizn|kiz)_[13]{1}[13456789abcdefghijkmnopqrstuwxyz]{59}$`. Validation of the checksum is also recommended, depending on the integration.
 
 !!! question "Prefixes: kizn_ vs. kiz_"
     As of V19.0 **KIZUNANO COIN node only returns `kizn_` addresses in all actions**, but prior versions returned `kiz_` addresses. These prefixes are interchangeable — everything after the `_` remains the same. If you have an issue using one or the other prefix with any exchange or service, you can safely switch between `kizn_` and `kiz_` prefixes as needed — they both represent the same account owned by your private key or seed.
@@ -111,7 +111,7 @@ For basic address validation, the following regular expression can be used: `^(n
 KIZUNANO COIN can be represented using more than one unit of measurement. While the most common unit is the $nano$, the smallest unit is the $raw$. Below is the formula for converting between $raw$ and $nano$.
 
 $$
-1 nano = 10^{30} raw
+1 KIZN = 10^{6} raw
 $$
 
 !!! warning "Important"
@@ -191,7 +191,7 @@ For details on how to create individual blocks for sending from, receiving to, o
 
 Note: `amount` values should always be in RAW.
 
-Note: Please use `nano://` for deep links 
+Note: Please use `kizn://` for deep links 
 
 ### Send to an address
 

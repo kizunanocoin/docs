@@ -44,8 +44,8 @@ docker run --restart=unless-stopped -d \
 | `-p 3975:3975`                                        | Maps the bootstrapping TCP port |
 | `-v ${NANO_HOST_DIR}:/root`                           | Maps the host's KIZUNANO COIN directory to the guest `/root` directory |
 | `--restart=unless-stopped`                            | Restarts the container if it crashes |
-| `nanocurrency/nano:${NANO_TAG}`                       | Specifies the container to execute with tag |
-| `-p [::1]:3976:3976`<br />or `-p 127.0.0.1:3976:3976` | Indicates that only RPC commands originating from the host will be accepted. **WARNING: Without the proper IP configured here, anyone with access to your system's IP address can control your nano\_node.** |
+| `kizunanocoin/kizn:${NANO_TAG}`                       | Specifies the container to execute with tag |
+| `-p [::1]:3976:3976`<br />or `-p 127.0.0.1:3976:3976` | Indicates that only RPC commands originating from the host will be accepted. **WARNING: Without the proper IP configured here, anyone with access to your system's IP address can control your kizunano_node.** |
 | `-p [::1]:3978:3978`<br />or `-p 127.0.0.1:3978:3978` | Indicates that only the host can create a connection to the [websocket server](/integration-guides/websockets). Data throughput can be very high depending on configuration, which could slow down the node if available outside the host.
 
 If you wish to use different ports, change the host ports in the `docker run` command; do not change the ports in the [config-node.toml](/running-a-node/configuration) file.
@@ -62,7 +62,7 @@ This will start the docker container using host ports 3975 and 3976 and put the 
     On port 3975, both TCP and UDP are required.
 
 !!! warning
-    If you are running multiple nano\_node Docker containers, **DO NOT** share the same `${NANO_HOST_DIR}`, each nano\_node requires its own independent files.
+    If you are running multiple kizunano_node Docker containers, **DO NOT** share the same `${NANO_HOST_DIR}`, each kizunano_node requires its own independent files.
 
 ---
 

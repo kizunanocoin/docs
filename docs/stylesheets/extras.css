@@ -150,6 +150,8 @@
 
 .md-announce {
     background-color: #000034;
+    height: 0px;
+    display: none;
 }
 
 @media only screen and (min-width: 45em) {
