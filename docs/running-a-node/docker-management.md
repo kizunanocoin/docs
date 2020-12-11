@@ -34,7 +34,7 @@ docker run --restart=unless-stopped -d \
   -p [::1]:3978:3978 \
   -v ${NANO_HOST_DIR}:/root \
   --name ${NANO_NAME} \
-  nanocurrency/nano:${NANO_TAG}
+  kizunanocoin/node:${NANO_TAG}
 ```
 
 | Option                                                | Purpose |
@@ -96,7 +96,7 @@ docker ps
 
 ```bash
 CONTAINER ID        IMAGE               COMMAND                 CREATED             STATUS              PORTS                                                                      NAMES
-0118ad5b4848        nanocurrency/nano   "/bin/bash /entry.sh"   41 seconds ago      Up 56 seconds       0.0.0.0:3975->3975/tcp, 0.0.0.0:3975->3975/udp, 127.0.0.1:3976->3976/tcp   kizunano_node_1
+0118ad5b4848        kizunanocoin/node   "/bin/bash /entry.sh"   41 seconds ago      Up 56 seconds       0.0.0.0:3975->3975/tcp, 0.0.0.0:3975->3975/udp, 127.0.0.1:3976->3976/tcp   kizunano_node_1
 ```
 
 ---
@@ -109,16 +109,16 @@ First, [stop the container](#stopping) if it is running.
 docker stop ${NANO_NAME}
 ```
 
-Then we can download the latest version with `docker pull` (or [whichever version](https://hub.docker.com/r/nanocurrency/nano/tags/) we need).
+Then we can download the latest version with `docker pull` (or [whichever version](https://hub.docker.com/r/kizunanocoin/node/tags/) we need).
 
 Pull latest release of the KIZUNANO COIN Node
 ```bash
-docker pull nanocurrency/nano
+docker pull kizunanocoin/node
 ```
 
 Or pull the KIZUNANO COIN tagged with "V19.0" from Dockerhub
 ```bash
-docker pull nanocurrency/nano:V19.0
+docker pull kizunanocoin/node:V19.0
 ```
 
 Lastly, we [start up the docker container again](#starting) using the same command.
@@ -152,7 +152,7 @@ A sample docker-compose.yml is provided to model the same behavior as the docker
 version: '3'
 services:
   node:
-    image: "nanocurrency/nano:${NANO_TAG}" # tag you wish to pull, none for latest
+    image: "kizunanocoin/node:${NANO_TAG}" # tag you wish to pull, none for latest
     restart: "unless-stopped"
     ports:
      - "3975:3975/udp"   #udp network traffic
@@ -198,9 +198,9 @@ To maintain existing compatibility the Docker containers are being built with `U
 
 The problem with this is that the container ends up writing files to your mounted path as root. Best practices would dictate that since there is no need for privilege escalation we can create a user and run under that context instead.
 
-In the event you wish to use the `--user=nanocurrency -w=/home/nanocurrency` flags the directory you mount should have permissions changed for uid:guid 1000:1000 using `sudo chown -R 1000:1000 <local_path>` and your mount flag will become `-v <local_path>:/home/nanocurrency`
+In the event you wish to use the `--user=kizunanocoin -w=/home/kizunanocoin` flags the directory you mount should have permissions changed for uid:guid 1000:1000 using `sudo chown -R 1000:1000 <local_path>` and your mount flag will become `-v <local_path>:/home/kizunanocoin`
 
-This will be changed to default to `USER nanocurrency` and `WORK_DIR /home/nanocurrency` in a future release
+This will be changed to default to `USER kizunanocoin` and `WORK_DIR /home/kizunanocoin` in a future release
 
 ---
 

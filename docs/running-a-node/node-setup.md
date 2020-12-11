@@ -1,6 +1,6 @@
 # Node Setup
 
-While you can run a KIZUNANO COIN node by downloading a binary or building from source, it is recommended to use a Docker container. When using the [official Docker images](https://hub.docker.com/r/nanocurrency/nano/tags/), your node will be much easier to upgrade and maintain.
+While you can run a KIZUNANO COIN node by downloading a binary or building from source, it is recommended to use a Docker container. When using the [official Docker images](https://hub.docker.com/r/kizunanocoin/node/tags/), your node will be much easier to upgrade and maintain.
 
 --8<-- "docker-limitations.md"
 
@@ -9,11 +9,6 @@ While you can run a KIZUNANO COIN node by downloading a binary or building from 
 
     - You have a basic understanding of Docker.
     - You are using [KIZUNANO COIN's official Docker images](https://hub.docker.com/r/kizunanocoin/kizunanocoin/tags/) to manage your node. If you decide to use a different method, you will need to be able to fill in the gaps when following along.
-
-!!! tip "Beta Network Setup"
-	The details below are focused on running a node on the main network. The beta network is also available for testing and is a great place to learn about node management. Beta nodes also help improve our network, so please consider running one!
-
-	See the [Beta Network](/running-a-node/beta-network) page for details on how to setup a node on this test network.
 
 ---
 
@@ -40,18 +35,18 @@ Docker must be installed on the host machine and instructions can be found here:
 ---
 
 ## Pulling the Docker Image 
-[![Docker Pulls](https://img.shields.io/docker/pulls/nanocurrency/nano.svg)](https://hub.docker.com/r/nanocurrency/nano/)
+[![Docker Pulls](https://img.shields.io/docker/pulls/nanocurrency/nano.svg)](https://hub.docker.com/r/kizunanocoin/node/)
 
 The Docker image can be downloaded via `docker pull`. We can either grab the `latest` or a specific version/tag. Not specifying a tag defaults to `latest`. An example of each is found below.
 
 Pulls the latest release of KIZUNANO COIN Node:
 ```bash
-docker pull nanocurrency/nano
+docker pull kizunanocoin/node
 ```
 
 Pulls a specific version of KIZUNANO COIN node:
 ```bash
-docker pull nanocurrency/nano:V20.0
+docker pull kizunanocoin/node:V20.0
 ```
 
 !!! tip

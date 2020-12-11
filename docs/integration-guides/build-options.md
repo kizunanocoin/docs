@@ -10,19 +10,6 @@ Each release cycle official builds of the node for Linux, MacOS and Windows are 
 
 --8<-- "known-issue-macos-too-many-open-files.md"
 
-### Beta builds
-
-Each beta release cycle official beta builds of the node for Linux, MacOS and Windows are released, along with Docker images. Go to the [Beta Network page](/running-a-node/beta-network/) for more details.
-
-**Other sources**  
-The beta node can be also be installed for RHEL/CentOS rpm:
-```bash
-sudo yum-config-manager --add-repo https://repo.nano.org/nanocurrency-beta.repo
-sudo yum install nanocurrency-beta
-```
-
-This installs `kizunano_node-beta` to bin.
-
 ## KIZUNANO COIN Directory
 
 ### Contents
@@ -132,11 +119,6 @@ Format: `cmake -D VARNAME=VARVALUE`
 * In order to run the tests, the corresponding CMake variable must be set: `-D NANO_TEST=ON`.
 * With this variable set, `make` will also build test files, and will produce `core_test`, `rpc_test`, `load_test` and `slow_test` binaries, which can be executed such as `./core_test`.
 * See more details in [Testing](#testing)
-
-**Beta Network Participation**
-
-* More information can be found on the [Beta Network page](/running-a-node/beta-network/)
-* To run a node on the beta network, set CMake variable: `-DACTIVE_NETWORK=nano_beta_network`
 
 ---
 

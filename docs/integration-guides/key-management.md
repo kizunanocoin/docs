@@ -22,7 +22,7 @@ https://github.com/joltwallet/bip-mnemonic
 
 #### Implementations
 
-https://github.com/numsu/nanocurrency-web-js
+https://github.com/kizunanocoin/kizunanocoin-web-js
 
 #### Test Vectors
 Given 24-Word Mnemonic:

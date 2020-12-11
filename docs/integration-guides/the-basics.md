@@ -195,41 +195,41 @@ Note: Please use `kizn://` for deep links
 
 ### Send to an address
 
-    nano:kizn_<encoded address>[?][amount=<raw amount>][&][label=<label>][&][message=<message>]
+    kizn:kizn_<encoded address>[?][amount=<raw amount>][&][label=<label>][&][message=<message>]
 
 Just the address
 
-    nano:kizn_3wm37qz19zhei7nzscjcopbrbnnachs4p1gnwo5oroi3qonw6inwgoeuufdp
+    kizn:kizn_3wm37qz19zhei7nzscjcopbrbnnachs4p1gnwo5oroi3qonw6inwgoeuufdp
 
 Address and an amount (as RAW)
 
-    nano:kizn_3wm37qz19zhei7nzscjcopbrbnnachs4p1gnwo5oroi3qonw6inwgoeuufdp?amount=1000
+    kizn:kizn_3wm37qz19zhei7nzscjcopbrbnnachs4p1gnwo5oroi3qonw6inwgoeuufdp?amount=1000
 
 Address and a label
 
-    nano:kizn_3wm37qz19zhei7nzscjcopbrbnnachs4p1gnwo5oroi3qonw6inwgoeuufdp?label=Developers%20Fund%20Address
+    kizn:kizn_3wm37qz19zhei7nzscjcopbrbnnachs4p1gnwo5oroi3qonw6inwgoeuufdp?label=Developers%20Fund%20Address
 
 Send to an address with amount, label and message
 
-    nano:kizn_3wm37qz19zhei7nzscjcopbrbnnachs4p1gnwo5oroi3qonw6inwgoeuufdp?amount=10&label=Developers%20Fund&message=Donate%20Now
+    kizn:kizn_3wm37qz19zhei7nzscjcopbrbnnachs4p1gnwo5oroi3qonw6inwgoeuufdp?amount=10&label=Developers%20Fund&message=Donate%20Now
 
 ### Representative change
 
-    nanorep:kizn_<encoded address>[?][label=<label>][&][message=<message>]
+    kiznrep:kizn_<encoded address>[?][label=<label>][&][message=<message>]
 
 Change to representative with label and message
 
-    nanorep:kizn_1stofnrxuz3cai7ze75o174bpm7scwj9jn3nxsn8ntzg784jf1gzn1jjdkou?label=Official%20Rep%202&message=Thank%20you%20for%20changing%20your%20representative%21
+    kiznrep:kizn_1stofnrxuz3cai7ze75o174bpm7scwj9jn3nxsn8ntzg784jf1gzn1jjdkou?label=Official%20Rep%202&message=Thank%20you%20for%20changing%20your%20representative%21
 
 ### Private Key Import
 
-    nanokey:<encoded private key>[?][label=<label>][&][message=<message>]
+    kiznkey:<encoded private key>[?][label=<label>][&][message=<message>]
 
 ### Seed Import
 
-    nanoseed:<encoded seed>[?][label=<label>][&][message=<message>][&][lastindex=<index>]
+    kiznseed:<encoded seed>[?][label=<label>][&][message=<message>][&][lastindex=<index>]
 
 ### Process a JSON blob block
 (to be sent as the `block` argument to the RPC call `process`)
 
-    nanoblock:<blob>
+    kiznblock:<blob>
