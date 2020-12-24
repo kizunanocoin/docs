@@ -78,4 +78,4 @@ The exporter supports sending metrics to multiple push gateways using a `config.
 
 Although no public push gateways for node monitoring are available at this time, there may be opportunities in the future to share your node metrics with the community or other monitoring setups to provide a better view of network performance. Check back here and keep an eye out for these public gateways to become available.
 
-And if you know of any public push gateways available to send this useful node data to, [please let us know](https://newkizunacoin.com/).
+And if you know of any public push gateways available to send this useful node data to, [please let us know](https://kizunanocoin.com/).

@@ -2439,7 +2439,7 @@ This contains a summarized view of the network with 10% of lower/upper bound res
 | **\*_version**        | mode (most common) of (protocol, major, minor, patch, pre_release) versions |
 | **uptime**            | number of seconds since the UTC epoch at the point where the response is sent from the peer |
 | **genesis_block**     | mode (most common) of genesis block hashes |
-| **maker**             | meant for third party node software implementing the protocol so that it can be distinguished, `0` = The KIZ Association (TKA) |
+| **maker**             | meant for third party node software implementing the protocol so that it can be distinguished, `0` = THE KIZUNANO CORP. (TKC) |
 | **timestamp**         | number of milliseconds since the UTC epoch at the point where the response is sent from the peer |
 | **active_difficulty** | the current network difficulty, see [active_difficulty](/commands/rpc-protocol/#active_difficulty) "network_current" |
 

@@ -1,2 +1,2 @@
 !!! note ""
-	[KIZUNANO COIN](https://newkizunacoin.com/) | [GitHub](https://github.com/kizunanocoin) | [Twitter](https://twitter.com/newkizunacoin) | [Discord](https://chat.kizunanocoin.com) | [Medium](https://kizunacoinnewsystem9486458.medium.com/)
+	[KIZUNANO COIN](https://kizunanocoin.com/) | [GitHub](https://github.com/kizunanocoin) | [Twitter](https://twitter.com/newkizunacoin) | [Discord](https://chat.kizunanocoin.com) | [Medium](https://kizunacoinnewsystem9486458.medium.com/)

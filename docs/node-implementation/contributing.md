@@ -58,7 +58,7 @@ Communication is the key to working together efficiently. A good way to get in t
 !!! warning "Security Vulnerability Disclosure"
 	**Do NOT discuss potential security vulnerabilities on the issue tracker, public forums or open discussion channels**
 
-	If you discover a bug you believe to pose a security risk to KIZUNANO COIN network, please contact info@newkizunacoin.com with a proof of concept with full details of the bug including:
+	If you discover a bug you believe to pose a security risk to KIZUNANO COIN network, please contact info@kizunanocoin.com with a proof of concept with full details of the bug including:
 	
 	* Repository of the bug
 	* High-level summary
@@ -159,7 +159,7 @@ Your code will be reviewed with security in mind, but please do your part before
 
 ## General tips for contributors
 
-* Read the [white paper](https://newkizunacoin.com/)
+* Read the [white paper](https://kizunanocoin.com/)
 * Peruse the code and don't be shy about asking questions if there are parts you don't understand.
 * Make sure you understand the GitHub workflow.
 * Participate in the community by reading and replying to GitHub issues, Reddit posts and tweets. This gives you a great insight into the pain points that exists with the software.

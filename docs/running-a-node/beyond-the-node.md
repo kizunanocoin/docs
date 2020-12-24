@@ -8,7 +8,7 @@ Congrats! Now that you understand more about how KIZUNANO COIN works and setup y
 
 A big part of KIZUNANO COIN community is [Dicsord](https://chat.kizunanocoin.com). Run by a group of KIZUNANO COIN enthusiasts, their website helps manage requests for assistance and funding for KIZUNANO COIN related projects. Check out the in progress and past funded projects for some great ideas and opportunities to join in building on top of KIZUNANO COIN!
 
-For even more details about the many projects that help make our ecosystem robust, head over to [KIZUNANO COIN](https://newkizunacoin.com) for examples of wallets, services and more that have integrated KIZUNANO COIN.
+For even more details about the many projects that help make our ecosystem robust, head over to [KIZUNANO COIN](https://kizunanocoin.com) for examples of wallets, services and more that have integrated KIZUNANO COIN.
 
 ## Keep learning
 
